@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url();?>/Assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url();?>/Assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Material Dashboard by Creative Tim
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="<?php echo base_url();?>/Assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/dist/css/adminlte.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/morris/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/datepicker/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/daterangepicker/daterangepicker-bs3.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="">
-  <div class="wrapper ">
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">

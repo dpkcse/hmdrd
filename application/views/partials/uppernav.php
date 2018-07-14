@@ -1,60 +1,103 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-    <div class="container-fluid">
-        <div class="navbar-wrapper">
-        <a class="navbar-brand" href="#pablo">Dashboard</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="navbar-toggler-icon icon-bar"></span>
-        <span class="navbar-toggler-icon icon-bar"></span>
-        <span class="navbar-toggler-icon icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end">
-        <form class="navbar-form">
-            <div class="input-group no-border">
-            <input type="text" value="" class="form-control" placeholder="Search...">
-            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                <i class="material-icons">search</i>
-                <div class="ripple-container"></div>
-            </button>
+<nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fa fa-comments-o"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="<?php echo base_url(); ?>Assets/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fa fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+              </div>
             </div>
-        </form>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link" href="#pablo">
-                <i class="material-icons">dashboard</i>
-                <p class="d-lg-none d-md-block">
-                Stats
-                </p>
-            </a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">notifications</i>
-                <span class="notification">5</span>
-                <p class="d-lg-none d-md-block">
-                Some Actions
-                </p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                <a class="dropdown-item" href="#">Another Notification</a>
-                <a class="dropdown-item" href="#">Another One</a>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="<?php echo base_url(); ?>Assets/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fa fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+              </div>
             </div>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#pablo">
-                <i class="material-icons">person</i>
-                <p class="d-lg-none d-md-block">
-                Account
-                </p>
-            </a>
-            </li>
-        </ul>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="<?php echo base_url(); ?>Assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fa fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
-    </div>
-</nav>
-<!-- End Navbar -->
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fa fa-bell-o"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+            class="fa fa-th-large"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
