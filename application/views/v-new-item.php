@@ -58,6 +58,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <input type="text" class="form-control" id="inputPassword3" placeholder="প্রোডাক্টের বিবরণ এইখানে লিখুন">
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ধরনঃ</label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">সিরাপ</option>
+                                            <option>ট্যাবলেট</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-12 col-md-12 col-sm-12 control-label">পরিমানঃ</label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="উদাঃ ৪৫০ মিঃ লিঃ/ ২ পাতা">
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                 <label for="inputPassword3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
