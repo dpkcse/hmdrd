@@ -25,25 +25,25 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-dashboard"></i>
+            <a href="<?php echo base_url(); ?>home" class="nav-link active">
+              <i class="nav-icon fa fa-tree"></i>
               <p> ড্যাশবোর্ড</p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
+            <a href="" class="nav-link">
+              <i class="nav-icon fa fa-tree"></i>
               <p>কাষ্টমার <i class="right fa fa-angle-left"></i></p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="pages/charts/chartjs.html" class="nav-link">
+                    <a href="<?php echo base_url(); ?>public/n-customer" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>নতুন কাষ্টমার</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/charts/flot.html" class="nav-link">
+                    <a href="<?php echo base_url(); ?>public/customer-l" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>কাষ্টমার লিষ্ট</p>
                     </a>
@@ -57,7 +57,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-person" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন প্রতিনিধি</p>
                 </a>
@@ -77,7 +77,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-product" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন প্রোডাক্ট মজুদ</p>
                 </a>
@@ -86,6 +86,26 @@
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রোডাক্ট লিষ্ট</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-tree"></i>
+              <p> ইনভেন্টরি <i class="fa fa-angle-left right"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>মজুদকৃত প্রোডাক্ট</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>প্রোডাক্ট স্টক</p>
                 </a>
               </li>
             </ul>
@@ -140,6 +160,12 @@
                 <a href="pages/UI/general.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>সেল রির্পোট</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>প্রোডাক্ট সেল রির্পোট</p>
                 </a>
               </li>
               <li class="nav-item">

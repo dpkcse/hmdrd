@@ -22,4 +22,16 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('dashboard');
 	}
+
+	public function newCustomer(){
+		$this->load->view('v-new-customer');
+	}
+
+	public function newSalesPerson(){
+		$this->load->view('v-new-stuff');
+	}
+	
+	public function newProductEntry(){
+		$this->load->view('v-new-item');
+	}
 }
