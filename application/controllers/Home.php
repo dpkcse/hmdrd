@@ -49,6 +49,10 @@ class Home extends CI_Controller {
 	
 	public function newProductEntry(){
 		$this->load->view('v-new-item');
+	}
+	
+	public function productList(){
+		$this->load->view('v-new-product-list');
 	}	
 
 
