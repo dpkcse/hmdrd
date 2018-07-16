@@ -40,6 +40,10 @@ class Home extends CI_Controller {
 		$this->load->view('v-new-stuff');
 	}
 
+	public function newSaleslist(){
+		$this->load->view('v-new-stuff-list');
+	}
+
 
 	/****** new Product Entry function section ******/
 	
