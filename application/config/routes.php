@@ -53,6 +53,8 @@ $route['default_controller'] = 'home';
 $route['public/n-customer'] = "home/newCustomer";
 $route['public/n-s-person'] = "home/newSalesPerson";
 $route['public/n-product'] = "home/newProductEntry";
+$route['public/signin'] = "home/login";
+$route['public/customer-l'] = "home/customerList";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

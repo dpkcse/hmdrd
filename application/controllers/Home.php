@@ -33,5 +33,15 @@ class Home extends CI_Controller {
 	
 	public function newProductEntry(){
 		$this->load->view('v-new-item');
+	}	
+
+	public function login(){
+		$this->load->view('v-login');
 	}
+
+	public function customerList(){
+		$this->load->view('v-new-customer-list');
+	}
+
+
 }

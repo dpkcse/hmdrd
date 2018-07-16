@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/dist/css/adminlte.min.css">
   <!-- iCheck -->
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/datatables/dataTables.bootstrap4.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/daterangepicker/daterangepicker-bs3.css">
   <!-- bootstrap wysihtml5 - text editor -->
