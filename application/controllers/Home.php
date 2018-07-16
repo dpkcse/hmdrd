@@ -23,25 +23,41 @@ class Home extends CI_Controller {
 		$this->load->view('dashboard');
 	}
 
+	/* new customer function section */
+
 	public function newCustomer(){
 		$this->load->view('v-new-customer');
 	}
 
+
+	public function customerList(){
+		$this->load->view('v-new-customer-list');
+	}
+
+	/****** new sales person function section ******/
+
 	public function newSalesPerson(){
 		$this->load->view('v-new-stuff');
 	}
+
+
+	/****** new Product Entry function section ******/
 	
 	public function newProductEntry(){
 		$this->load->view('v-new-item');
 	}	
 
+
+	/****** new Login System function section ******/
+
 	public function login(){
 		$this->load->view('v-login');
 	}
 
-	public function customerList(){
-		$this->load->view('v-new-customer-list');
-	}
+
+	/****** new sales person function section ******/
+
+	
 
 
 }
