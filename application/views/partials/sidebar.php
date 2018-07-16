@@ -83,7 +83,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-product-l" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রোডাক্ট লিষ্ট</p>
                 </a>
