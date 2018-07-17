@@ -117,7 +117,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/invoice" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন ইনভয়েস তৈরী</p>
                 </a>
