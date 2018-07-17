@@ -70,6 +70,7 @@ $route['public/signin'] = "home/login";
 
 			/***  Invoice Route ****/
 $route['public/invoice'] = "home/newInvoice";
+$route['public/invoice-d'] = "home/InvoiceDesign";
 
 			
 
