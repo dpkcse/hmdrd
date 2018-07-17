@@ -13540,28 +13540,36 @@ a.text-muted:hover {
     text-transform: uppercase;
     color: #1B2431;
     line-height: 20px;
+    padding-top: 7px;
 }
 
 .invoice .invoice-company>img {
+    width: 90px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 5px;
+}
+.invoice-address h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1B2431;
 }
 
 .invoice .invoice-company h2 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    margin: 15px 0 0;
+    margin: 9px 48px 0;
     line-height: 20px;
     padding: 0;
     text-transform: uppercase;
-    color: #1B2431;
+    color: #0012ff;
 }
 
 .invoice .invoice-company p {
     font-size: 13px;
     font-weight: 400;
-    margin-top: 0;
+    margin-top: 5px;
+    margin-left: 48px;
     color: #7F8FA4;
 }
 
@@ -13594,15 +13602,14 @@ a.text-muted:hover {
 .invoiceDesin .table>thead>tr>th {
     font-size: 14px;
     color: #1B2431;
+    font-weight: 700;
 }
 
 .invoiceDesin .table>tbody>tr>td, .invoiceDesin .table>thead>tr>th {
     border-bottom: 1px solid #DBE0E4;
 }
-.invoiceDesin .badge, .invoiceDesin .label, .apinvoiceDesinp .table>thead>tr>th {
-    font-weight: 700;
-    text-transform: uppercase;
-}
+
+
 .invoiceDesin .table tr td, .invoiceDesin .table tr th {
     line-height: 20px;
     padding: 10px 15px;
@@ -13634,6 +13641,15 @@ a.text-muted:hover {
 }
 
 
-.invoiceDesin .table td, .invoiceDesin .table th {
+.invoiceDesin .table th {
     font-weight: 500;
+}
+
+.tblProductBody td{
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+.borderUP{
+    border-top: 2px solid #000000;
 }

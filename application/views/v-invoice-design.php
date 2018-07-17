@@ -40,9 +40,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="invoice-company">
-                                        <img src="http://boooya.aqvatarius.com/img/boooya.png" alt="Boooya - Revolution Admin Template">
-                                        <h2>Boooya Team</h2>
-                                        <p>UI&amp;UX Professionals</p>
+                                        <img src="<?php echo base_url(); ?>Assets/dist/img/logo.png" alt="হামদর্দ (ওয়াকফ) ল্যাবরেটরীজ বাংলাদেশ">
+                                        <h2>হামদর্দ (ওয়াকফ) ল্যবরেটরীজ বাংলাদেশ</h2>
+                                        <p>হামদর্দ ভবন, ৯৯ বীর উত্তম সি আর দত্ত সড়ক, ধানমন্ডি, ঢাকা-১২০৫</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -61,14 +61,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="invoice-address">
-                                        <h5>Billing From</h5>
-                                        <p>John Doe<br>45 StreetName St.<br>City, Country, 00000<br>Phone: +98(765) 432-10-98</p>
+                                        <h5>পরিবেশকঃ মেসার্স আজাদ এন্টারপ্রাইজ</h5>
+                                        <p>তালতলি বাজার, সন্দ্বীপ, চট্টগ্রাম<br>ফোন: ০১৭৪৯৯৭৭৬০৬</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="invoice-address text-right">
-                                        <h5>Billing To</h5>
-                                        <p>Dmitry Ivaniuk<br>15 Nameofstreet St.<br>City, Country, 00000<br>Phone: +01(234) 567-89-01</p>
+                                        <h5>পপুলার ফার্মেসী</h5>
+                                        <p>আকবর হাট, সন্দ্বীপ, চট্টগ্রাম <br>ফোন: ০১৭৪৪৫৫৮৮৯৯</p>
                                     </div>
                                 </div>
                             </div>
@@ -82,47 +82,46 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th colspan="2">Work We've Done For You</th>
-                                            <th>Hours</th>
-                                            <th width="150">Rate</th>
-                                            <th width="150">Total</th>
+                                            <th class="text-center">#</th>
+                                            <th >ঔষধের নাম</th>
+                                            <th class="text-center">পরিবেশনা</th>
+                                            <th class="text-center" width="150">পরিমান</th>
+                                            <th class="text-center" width="150">দর</th>
+                                            <th class="text-center" width="150">টাকা &#2547;</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-thin">
+                                    <tbody class="text-thin tblProductBody">
                                         <tr>
-                                            <td width="40" class="text-center">1</td>
-                                            <td class="text-bold">WebSite Design and Sketches</td>
-                                            <td>12:00</td>
-                                            <td>$25</td>
-                                            <td class="text-bold">$300.00</td>
+                                            <td width="40" class="text-center">১</td>
+                                            <td class="" >সিরাপ সিনকারা</td>
+                                            <td class="text-center">৪৫০ মিলি</td>
+                                            <td class="text-center">৫</td>
+                                            <td class="text-center">১৫০</td>
+                                            <td class="text-center">৭৫০</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-bold">WebSite Coding</td>
-                                            <td>08:30</td>
-                                            <td>$15</td>
-                                            <td class="text-bold">$127.50</td>
+                                            <td width="40" class="text-center">১</td>
+                                            <td class="" >সিরাপ কারমিনা</td>
+                                            <td class="text-center">২৫০ মিলি</td>
+                                            <td class="text-center">৩</td>
+                                            <td class="text-center">৫০</td>
+                                            <td class="text-center">১৫০</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">3</td>
-                                            <td class="text-bold">Logo Design</td>
-                                            <td>06:00</td>
-                                            <td>$30</td>
-                                            <td class="text-bold">$180.00</td>
+                                            <td width="40" class="text-center">১</td>
+                                            <td class="" >সিরাপ ছাফী</td>
+                                            <td class="text-center">১০০ মিলি</td>
+                                            <td class="text-center">১</td>
+                                            <td class="text-center">১০০</td>
+                                            <td class="text-center">১০০</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">4</td>
-                                            <td class="text-bold">Newsletter Template Design</td>
-                                            <td>05:00</td>
-                                            <td>$25</td>
-                                            <td class="text-bold">$125.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">5</td>
-                                            <td class="text-bold">iOS Application Design</td>
-                                            <td>25:00</td>
-                                            <td>$25</td>
-                                            <td class="text-bold">$625.00</td>
+                                            <td width="40" class="text-center">১</td>
+                                            <td class="" >আরক ফাওলিন</td>
+                                            <td class="text-center">৪৫০ মিলি</td>
+                                            <td class="text-center">২</td>
+                                            <td class="text-center">২৫০</td>
+                                            <td class="text-center">৫০০</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -132,16 +131,16 @@
                                     <table class="table table-bordered invoice-table-total">
                                         <tbody>
                                             <tr>
-                                                <td class="text-muted text-thin">Subtotal:</td>
-                                                <td width="150" class="text-muted">$1,357.50</td>
+                                                <td class="text-center text-muted text-thin"><strong>মোট</strong></td>
+                                                <td width="150" class="text-center text-muted">১৫০০ &#2547;</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-muted text-thin">Taxes (20%):</td>
-                                                <td width="150" class="text-muted">$271.50</td>
+                                                <td class="text-center text-muted text-thin"><strong>জমা</strong></td>
+                                                <td width="150" class="text-center text-muted">৫০০ &#2547;</td>
                                             </tr>
                                             <tr class="invoice-table-highlight">
-                                                <td class="text-bold">Total Amout:</td>
-                                                <td width="150" class="text-bold">$1,629.00</td>
+                                                <td class="text-center text-bold"><strong>বাকী</strong></td>
+                                                <td width="150" class="text-center text-bold">১০০০ &#2547;</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -150,13 +149,14 @@
                             <div class="invoice-thanks">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="title">Thank you for your choise</div>
-                                        <p>Boooya Team</p>
+                                        <!-- <div class="title">ধন্যবাদান্তে:</div>
+                                        <p>মেসার্স আজাদ এন্টারপ্রাইজ</p> -->
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <div class="title">John Doe</div>
-                                        <p class="text-italic">BigMan In Company</p>
-                                        <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>
+                                        <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
+                                        <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
+                                        <p class="text-italic">মেসার্স আজাদ এন্টারপ্রাইজ</p>
+                                        
                                     </div>
                                 </div>
                             </div>
