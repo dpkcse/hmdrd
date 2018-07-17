@@ -40,8 +40,9 @@ class Home extends CI_Controller {
 		$this->load->view('v-new-stuff');
 	}
 
-	public function newSaleslist(){
+	public function salesList(){
 		$this->load->view('v-new-stuff-list');
+	
 	}
 
 

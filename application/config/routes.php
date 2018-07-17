@@ -58,7 +58,7 @@ $route['public/customer-l'] = "home/customerList";
 
 			/***  Sales Route ****/
 $route['public/n-s-person'] = "home/newSalesPerson";
-$route['public/n-s-person']	= "home/newSaleslist";
+$route['public/n-s-l']	= "home/salesList";
 
 
 			/***  Product Route ****/
