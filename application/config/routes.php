@@ -67,7 +67,7 @@ $route['public/n-s-product-l'] = "home/productList";
 
 
 			/***  Invoice Route ****/
-$route['public/invoice'] = "home/newInvoice";
+//$route['public/invoice'] = "home/newInvoice";
 //$route['public/n-s-product-l'] = "home/productList";
 
 			/***  Login Route ****/
@@ -75,6 +75,11 @@ $route['public/signin'] = "home/login";
 
 			/***  Invoice Route ****/
 
+
+
+$route['public/invoice'] = "home/newInvoice";
+$route['public/invoice-d'] = "home/InvoiceDesign";
+// f8e22f6cbc5023ba323552565312fbac6ac85497
 
 			
 
