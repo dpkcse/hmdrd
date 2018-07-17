@@ -63,7 +63,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-l" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রতিনিধি লিষ্ট</p>
                 </a>
