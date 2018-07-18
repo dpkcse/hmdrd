@@ -34,18 +34,19 @@ class Home extends CI_Controller {
 		$this->load->view('v-new-customer-list');
 	}
 
-	/****** new sales person function section ******/
+	/******  Sales person function section ******/
 
 	public function newSalesPerson(){
 		$this->load->view('v-new-stuff');
 	}
 
-	public function newSaleslist(){
+	public function salesList(){
 		$this->load->view('v-new-stuff-list');
+	
 	}
 
 
-	/****** new Product Entry function section ******/
+	/****** Product Entry function section ******/
 	
 	public function newProductEntry(){
 		$this->load->view('v-new-item');
@@ -54,18 +55,31 @@ class Home extends CI_Controller {
 	public function productList(){
 		$this->load->view('v-new-product-list');
 	}	
+	
+	public function productList(){
+		$this->load->view('v-new-product-list');
+	}
 
 
-	/****** new Login System function section ******/
+	/****** Login System function section ******/
 
 	public function login(){
 		$this->load->view('v-login');
 	}
 
 
-	/****** new sales person function section ******/
+	/****** Invoice function section ******/
 
-	
+	public function newInvoice(){
+		$this->load->view('v-newInvoice');
+
+		$this->load->view('v-invoice');
+	}
+
+	public function InvoiceDesign(){
+		$this->load->view('v-invoice-design');
+		//f8e22f6cbc5023ba323552565312fbac6ac85497
+	}
 
 
 }

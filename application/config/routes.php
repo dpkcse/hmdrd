@@ -58,15 +58,30 @@ $route['public/customer-l'] = "home/customerList";
 
 			/***  Sales Route ****/
 $route['public/n-s-person'] = "home/newSalesPerson";
-$route['public/n-s-person']	= "home/newSaleslist";
+$route['public/n-s-l']	= "home/salesList";
 
 
 			/***  Product Route ****/
 $route['public/n-product'] = "home/newProductEntry";
 $route['public/n-s-product-l'] = "home/productList";
 
+
+			/***  Invoice Route ****/
+//$route['public/invoice'] = "home/newInvoice";
+//$route['public/n-s-product-l'] = "home/productList";
+
 			/***  Login Route ****/
 $route['public/signin'] = "home/login";
+
+			/***  Invoice Route ****/
+
+
+
+$route['public/invoice'] = "home/newInvoice";
+$route['public/invoice-d'] = "home/InvoiceDesign";
+// f8e22f6cbc5023ba323552565312fbac6ac85497
+
+			
 
 
 

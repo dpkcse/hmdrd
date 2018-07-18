@@ -13461,3 +13461,195 @@ a.text-muted:hover {
     height: 30px;
     background-color: #c2d2e400;
 }
+
+/* INVOICE DESIGN */
+.invoiceDesin .container {
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+}
+.invoice {
+    float: left;
+    width: 100%;
+    background: #FFF;
+    border: 1px solid #DBE0E4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.invoice .invoice-container {
+    float: left;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.invoice .invoice-company {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 55px;
+}
+
+.invoice .invoice-number {
+    float: left;
+    width: 100%;
+    text-align: right;
+}
+
+.invoice .invoice-container.invoice-container-highlight, .invoice .invoice-table-highlight>td {
+    background: #f2f2f2;
+}
+
+.text-right {
+    text-align: right!important;
+}
+
+.table-responsive {
+    float: left;
+    width: 100%;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    min-height: .01%;
+}
+
+.table.table-bordered {
+    border: 1px solid #DBE0E4;
+}
+
+.invoice .invoice-table-total {
+    width: 300px;
+    float: right;
+}
+
+.table.table-bordered {
+    border: 1px solid #DBE0E4;
+}
+
+.invoice .invoice-thanks {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.invoice .invoice-thanks .title {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1B2431;
+    line-height: 20px;
+    padding-top: 7px;
+}
+
+.invoice .invoice-company>img {
+    width: 90px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+.invoice-address h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1B2431;
+}
+
+.invoice .invoice-company h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 9px 48px 0;
+    line-height: 20px;
+    padding: 0;
+    text-transform: uppercase;
+    color: #0012ff;
+}
+
+.invoice .invoice-company p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-left: 48px;
+    color: #7F8FA4;
+}
+
+.invoice .invoice-company p:last-child {
+    margin-bottom: 0;
+}
+
+.invoice .invoice-number {
+    float: left;
+    width: 100%;
+    text-align: right;
+}
+
+.invoice .invoice-number h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 0 0;
+    line-height: 20px;
+    padding: 0;
+    text-transform: uppercase;
+    color: #1B2431;
+}
+
+@media (min-width: 1200px){
+    .col-lg-offset-2 {
+        margin-left: 4%;
+    }
+}
+
+.invoiceDesin .table>thead>tr>th {
+    font-size: 14px;
+    color: #1B2431;
+    font-weight: 700;
+}
+
+.invoiceDesin .table>tbody>tr>td, .invoiceDesin .table>thead>tr>th {
+    border-bottom: 1px solid #DBE0E4;
+}
+
+
+.invoiceDesin .table tr td, .invoiceDesin .table tr th {
+    line-height: 20px;
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+.text-thin {
+    font-weight: 300!important;
+}
+
+
+.invoiceDesin .row>div[class^=col-] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 992px){
+    .col-md-offset-8 {
+        margin-left: 66.66666667%;
+    }
+}
+
+.invoiceBody .row{
+    display: block;
+}
+
+.invoice-thanks .row{
+    display: flex;
+}
+
+
+.invoiceDesin .table th {
+    font-weight: 500;
+}
+
+.tblProductBody td{
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+.borderUP{
+    border-top: 2px solid #000000;
+}

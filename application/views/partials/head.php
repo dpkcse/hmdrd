@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/select2/select2.min.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/datatables/dataTables.bootstrap4.css">
