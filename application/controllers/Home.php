@@ -56,9 +56,7 @@ class Home extends CI_Controller {
 		$this->load->view('v-new-product-list');
 	}	
 	
-	public function productList(){
-		$this->load->view('v-new-product-list');
-	}
+	
 
 
 	/****** Login System function section ******/
