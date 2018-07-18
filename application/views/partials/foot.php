@@ -39,6 +39,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>Assets/dist/js/demo.js"></script>
 <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>Assets/plugins/select2/select2.full.min.js"></script>
 <script>
   $(function(){
     // $('.main-sidebar').slimScroll();
