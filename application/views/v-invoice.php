@@ -1,6 +1,4 @@
 <?php 
-
-    
 function bn2en($number) {
     $bn = array("১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "০");
     $en = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
@@ -17,13 +15,13 @@ function en2bn($number) {
 <?php include('partials/uppernav.php'); ?>
 <?php include('partials/sidebar.php'); ?>
 <style>
-    .form-group {
-        margin-top: 1rem;
-    }
+.form-group {
+    margin-top: 1rem;
+}
 
-    .center-block {
-        float:none;
-    }
+.center-block {
+    float:none;
+}
 </style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -58,12 +56,11 @@ function en2bn($number) {
                                 <div class="form-group">
                                     <label>Minimal</label>
                                     <select class="form-control select2" style="width: 100%;">
-                                    <option selected="selected">কাষ্টমার সিলেক্ট করুন</option>
-                                    <?php $customers   = $this->db->get('customers')->result_array(); ?>
-                                    <?php foreach ($customers as $row2){ ?>
-                                    <option><?php echo en2bn($row2['cus_name']); ?></option>
-                                    <?php } ?>
-                                    
+                                        <option selected="selected">কাষ্টমার সিলেক্ট করুন</option>
+                                        <?php $customers   = $this->db->get('customers')->result_array(); ?>
+                                        <?php foreach ($customers as $row2){ ?>
+                                        <option><?php echo en2bn($row2['cus_name']); ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 </div>
@@ -114,14 +111,19 @@ function en2bn($number) {
                                 </div>
                                 <div class="invoice-thanks">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <!-- <div class="title">ধন্যবাদান্তে:</div>
-                                            <p>মেসার্স আজাদ এন্টারপ্রাইজ</p> -->
+                                        <div class="col-md-4">
+                                        <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
+                                            <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
                                         </div>
-                                        <div class="col-md-6 text-right">
+                                        <div class="col-md-4 ">
                                             <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
                                             <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
                                             <p class="text-italic">মেসার্স আজাদ এন্টারপ্রাইজ</p>
+                                            
+                                        </div>
+                                        <div class="col-md-4 text-right">
+                                            <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
+                                            <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
                                             
                                         </div>
                                     </div>
