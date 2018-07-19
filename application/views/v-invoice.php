@@ -15,13 +15,13 @@ function en2bn($number) {
 <?php include('partials/uppernav.php'); ?>
 <?php include('partials/sidebar.php'); ?>
 <style>
-    .form-group {
-        margin-top: 1rem;
-    }
+.form-group {
+    margin-top: 1rem;
+}
 
-    .center-block {
-        float:none;
-    }
+.center-block {
+    float:none;
+}
 </style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

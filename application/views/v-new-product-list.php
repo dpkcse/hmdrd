@@ -32,7 +32,7 @@ function en2bn($number) {
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">কাষ্টমার লিষ্ট</h1>
+                <h1 class="m-0 text-dark">প্রোডাক্ট লিষ্ট</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <!-- <ol class="breadcrumb float-sm-right">
@@ -59,21 +59,23 @@ function en2bn($number) {
                                 <tr>
                                     <th>সিরিয়াল নং</th>
                                     <th>কোড নং</th>
-                                    <th>ফার্মেসী নাম</th>
-                                    <th>ঠিকানা</th>
-                                    <th>মোবাইল নং</th>
+                                    <th>প্রোডাক্টের নাম</th>
+                                    <th>পরিমান</th>
+                                    <th>ক্রয় মূল্য</th>
+                                    <th>বিক্রয় মূল্য</th>
                                     <th>#</th>
                                 </tr>
                             </thead>
-                            <?php $customers   = $this->db->get('customers')->result_array(); ?>
+                            <?php $customers   = $this->db->get('products')->result_array(); ?>
                             <tbody>
                             <?php foreach ($customers as $row2){ ?>
                                 <tr>
                                     <td><?php echo en2bn($row2['id']); ?></td>
-                                    <td><?php echo $row2['cus_code']; ?></td>
-                                    <td><?php echo $row2['cus_name']; ?></td>
-                                    <td><?php echo $row2['cus_address']; ?></td>
-                                    <td> <?php echo $row2['cus_mobile']; ?></td>
+                                    <td><?php echo en2bn($row2['code_no']); ?></td>
+                                    <td><?php echo $row2['pro_name']; ?></td>
+                                    <td><?php echo $row2['amount']; ?></td>
+                                    <td> <?php echo $row2['buy_price']; ?></td>
+                                    <td> <?php echo $row2['sale_price']; ?></td>
                                     <td>X</td>
                                 </tr>
                             <?php } ?>
