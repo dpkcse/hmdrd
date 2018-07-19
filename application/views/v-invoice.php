@@ -51,44 +51,58 @@ function en2bn($number) {
                 <div class="row">
                     <div class="invoice-container invoiceBody">
                         <div class="row">
-                            <div class="col-lg-11 col-lg-offset-2">
-                                <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Minimal</label>
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">কাষ্টমার সিলেক্ট করুন</option>
-                                        <?php $customers   = $this->db->get('customers')->result_array(); ?>
-                                        <?php foreach ($customers as $row2){ ?>
-                                        <option><?php echo en2bn($row2['cus_name']); ?></option>
-                                        <?php } ?>
-                                    </select>
+                            <div class="col-lg-12">
+                                <div class="col-lg-7">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="input-group">
+                                                <div class="input-group-btn" style="float: left;">
+                                                    <button type="button" class="btn btn-danger">ঔষধের নাম</button>
+                                                </div>
+                                                <!-- /btn-group -->
+                                                <select class="form-control select2" id="medicinename"  multiple="multiple" style="width:82%;" onchange="selectandClr(this.value)">
+                                                    <?php $customers   = $this->db->get('products')->result_array(); ?>
+                                                    <?php foreach ($customers as $row2){ ?>
+                                                    <option><?php echo $row2['pro_name']."(".$row2['amount'].") "; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th >ঔষধের নাম</th>
+                                                    <th class="text-center">পরিবেশনা</th>
+                                                    <th class="text-center" width="150">পরিমান</th>
+                                                    <th class="text-center" width="150">দর</th>
+                                                    <th class="text-center" width="150">টাকা &#2547;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-thin tblProductBody">
+                                                <tr>
+                                                    <td width="40" class="text-center">১</td>
+                                                    <td class="" >সিরাপ সিনকারা</td>
+                                                    <td class="text-center">৪৫০ মিলি</td>
+                                                    <td class="text-center">৫</td>
+                                                    <td class="text-center">১৫০</td>
+                                                    <td class="text-center">৭৫০</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+                                
+                            </div>
+                            
+                            <!-- <div class="col-lg-11 col-lg-offset-2">
+                                <div class="col-lg-6">
+                                
                                 </div>
                                 <div class="col-lg-6"></div>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">#</th>
-                                                <th >ঔষধের নাম</th>
-                                                <th class="text-center">পরিবেশনা</th>
-                                                <th class="text-center" width="150">পরিমান</th>
-                                                <th class="text-center" width="150">দর</th>
-                                                <th class="text-center" width="150">টাকা &#2547;</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="text-thin tblProductBody">
-                                            <tr>
-                                                <td width="40" class="text-center">১</td>
-                                                <td class="" >সিরাপ সিনকারা</td>
-                                                <td class="text-center">৪৫০ মিলি</td>
-                                                <td class="text-center">৫</td>
-                                                <td class="text-center">১৫০</td>
-                                                <td class="text-center">৭৫০</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                
                                 <div class="row">
                                     <div class="col-md-4 col-md-offset-8">
                                         <table class="table table-bordered invoice-table-total">
@@ -128,7 +142,7 @@ function en2bn($number) {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -144,8 +158,14 @@ function en2bn($number) {
 
 <?php include('partials/foot.php'); ?>
 <script>
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-  });
+$('#medicinename').select2({
+    maximumSelectionLength: 1,
+    placeholder: "ঔষধের নাম সিলেক্ট করে এন্টার চাপুন"
+});
+
+var selectandClr = (value) =>{
+    console.log(value);
+   $(".select2-selection__choice__remove").click();
+   $(".select2").click();
+};
 </script>
