@@ -13653,3 +13653,8 @@ a.text-muted:hover {
 .borderUP{
     border-top: 2px solid #000000;
 }
+
+.input-group-btn button{
+    border-radius: 5px 0px 0px 5px;
+    padding: 5.5px;
+}
