@@ -69,9 +69,9 @@ class Home extends CI_Controller {
 	/****** Invoice function section ******/
 
 	public function newInvoice(){
-		$this->load->view('v-newInvoice');
+		// $this->load->view('v-newInvoice');
 
-		$this->load->view('v-invoice');
+		$this->load->view('invoice');
 	}
 
 	public function InvoiceDesign(){
