@@ -2,7 +2,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/hmdrd" class="brand-link">
       <img src="<?php echo base_url(); ?>Assets/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:50px;">
       <span class="brand-text font-weight-light">আজাদ এন্টারপ্রাইজ</span>
     </a>
@@ -97,13 +97,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>মজুদকৃত প্রোডাক্ট</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রোডাক্ট স্টক</p>
                 </a>
@@ -123,7 +123,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>ইনভয়েস লিষ্ট</p>
                 </a>
@@ -137,13 +137,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন অর্ডার</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>অর্ডার লিষ্ট</p>
                 </a>
@@ -157,31 +157,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>সেল রির্পোট</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রোডাক্ট সেল রির্পোট</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রতিনিধি রির্পোট</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>কাষ্টমার রির্পোট</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="/hmdrd" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>ইনভয়েস প্যাকেজ</p>
                 </a>

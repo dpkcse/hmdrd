@@ -28,7 +28,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="../../index2.html" method="post">
+      <form action="/" method="post">
         <div class="form-group has-feedback">
           <input type="email" class="form-control" placeholder="Email">
         </div>
