@@ -73,16 +73,25 @@ class Home extends CI_Controller {
 		$this->load->view('invoice', $data);
 	}
 
-	public function getCustomerBy_code()
-	{
-		if($this->input->post('data'))
-		{
-			$this->admin_model->getCustomerBy_code($this->input->post('data'));
-		}
-	}
+	// public function getCustomerBy_code()
+	// {
+	// 	if($this->input->post('data'))
+	// 	{
+	// 		$data = $this->admin_model->getCustomerBy_code($this->input->post('data'));
+	// 		echo json_encode($data); 
+	// 	}
+	// }
 	// public function InvoiceDesign(){
 	// 	$this->load->view('v-invoice-design');
 	// }
+
+	public function getCustomerBy_code(){ 
+		// POST data 
+		$postData = $this->input->post();
+		// get data 
+		$data = $this->admin_model->getCustomerBy_code($postData);
+		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
+	}
 
 
 }

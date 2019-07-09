@@ -95,53 +95,6 @@ function en2bn($number) {
                                 </div>
                                 
                             </div>
-                            
-                            <!-- <div class="col-lg-11 col-lg-offset-2">
-                                <div class="col-lg-6">
-                                
-                                </div>
-                                <div class="col-lg-6"></div>
-                                
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-8">
-                                        <table class="table table-bordered invoice-table-total">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center text-muted text-thin"><strong>মোট</strong></td>
-                                                    <td width="150" class="text-center text-muted">১৫০০ &#2547;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center text-muted text-thin"><strong>জমা</strong></td>
-                                                    <td width="150" class="text-center text-muted">৫০০ &#2547;</td>
-                                                </tr>
-                                                <tr class="invoice-table-highlight">
-                                                    <td class="text-center text-bold"><strong>বাকী</strong></td>
-                                                    <td width="150" class="text-center text-bold">১০০০ &#2547;</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="invoice-thanks">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                        <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
-                                            <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
-                                        </div>
-                                        <div class="col-md-4 ">
-                                            <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
-                                            <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
-                                            <p class="text-italic">মেসার্স আজাদ এন্টারপ্রাইজ</p>
-                                            
-                                        </div>
-                                        <div class="col-md-4 text-right">
-                                            <p><img src="http://boooya.aqvatarius.com/assets/images/signature.png" alt="signature"></p>         
-                                            <div class="title borderUP">বিক্রয় প্রতিনিধি: মাক্সুদুর রাহমান</div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>

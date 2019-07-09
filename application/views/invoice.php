@@ -18,7 +18,9 @@ function en2bn($number) {
 .form-group {
     margin-top: 1rem;
 }
-
+.content-header{
+    padding: 5px .5rem;
+}
 .center-block {
     float:none;
 }
@@ -37,11 +39,13 @@ function en2bn($number) {
     display: flex;
     justify-content: center;
     align-items:center;
+    margin-bottom: 5px;
 }
 .mid_tittle{
     display: flex;
     justify-content: center;
     align-items:center;
+    margin-bottom: 5px;
 }
 .append_row{
     width: 25px;
@@ -56,6 +60,9 @@ function en2bn($number) {
 .append_row .fa{
     font-size: 30px;
     color: gray;
+}
+.select2{
+    width:100% !important;
 }
 </style>
 <!-- Content Wrapper. Contains page content -->
@@ -105,7 +112,7 @@ function en2bn($number) {
                                 <td>নাম ঃ</td>
                                 <td>
                                     <select class="form-control" name="" id="pharmacyName">
-                                        <option value="">check</option>
+                                        <option value="" selected disabled>Select One</option>
                                     </select>
                                 </td>
                                 <td>তারিখ ঃ</td>
@@ -115,13 +122,13 @@ function en2bn($number) {
                                 <td>ঠিকানা ঃ</td>
                                 <td>
                                     <select class="form-control" name="" id="pharmacyAddress">
-                                        <option value="">check</option>
+                                        <option value="" selected disabled>Select One</option>
                                     </select>
                                 </td>
                                 <td>প্রতিনিধির নাম ঃ</td>
                                 <td>
                                     <select class="form-control" id="salesMan">
-                                        <option value="">check</option>
+                                        <option value="" selected disabled>Select One</option>
                                     </select>
                                 </td>
                             </tr>
@@ -134,7 +141,7 @@ function en2bn($number) {
                         <tbody id="invBody">
                             <tr>
                                 <th style="width: 12%;background-color: gray;color:#FFF">কোড নং</th>
-                                <th style="width: 20%;background-color: gray;color:#FFF">পন্যের নাম</th>
+                                <th style="width: 20%;background-color: gray;color:#FFF">ঔষধের নাম</th>
                                 <th style="width: 10%;background-color: gray;color:#FFF">মিঃ লিঃ </th>
                                 <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
                                 <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
@@ -142,7 +149,14 @@ function en2bn($number) {
                             </tr>
                             <tr>
                                 <td></td>
-                                <td></td>
+                                <td>
+                                <select class="form-control medicinename " id="medicinename" style="width:82%;" onchange="selectandClr(this.value)">
+                                    <?php $customers   = $this->db->get('products')->result_array(); ?>
+                                    <?php foreach ($customers as $row2){ ?>
+                                    <option><?php echo $row2['pro_name']."(".$row2['amount'].") "; ?></option>
+                                    <?php } ?>
+                                </select>
+                                </td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -167,31 +181,47 @@ function en2bn($number) {
 function appendNewRow(elm) {
     var html = '<tr>'+
                 '    <td></td>'+
-                '    <td></td>'+
+                '    <td><select class="form-control medicinename " id="medicinename" style="width:82%;" onchange="selectandClr(this.value)"></select></td>'+
                 '    <td></td>'+
                 '    <td></td>'+
                 '    <td></td>'+
                 '    <td></td>'+
                '</tr>';
         $('#invBody').append(html);
+        select22();
 }
 
 
 
 function changevalue(elm) {
-    // var data = {
-    //     data: $(elm).val()
-    // }
-    // console.log(data);
+    var cus_code = $(elm).val();
     $.ajax({
        type: 'POST',
        url: '<?php echo base_url(); ?>home/getCustomerBy_code',
-       data: $(elm).val(),
+       data: {cus_code: cus_code},
        success: function (res) {
-           // if (res.success) {
+           if (res) {
             console.log(11, res)
-        // }           
+            $('#pharmacyName').html('');
+            $('#pharmacyAddress').html('');
+            jQuery.each( JSON.parse(res), function (k,v) {
+                $('#pharmacyName').append('<option value="'+v.cus_name+'">'+v.cus_name+'</option>');
+                $('#pharmacyAddress').append('<option value="'+v.cus_address+'">'+v.cus_address+'</option>');
+            });
+        }           
        }
     });
 }
+function select22(){
+    $('.medicinename').select2({
+        maximumSelectionLength: 1,
+        placeholder: "ঔষধের নাম সিলেক্ট করে এন্টার চাপুন"
+    });
+}
+select22()
+var selectandClr = (value) =>{
+    console.log(value);
+   $(".select2-selection__choice__remove").click();
+   $(".select2").click();
+};
 </script>
