@@ -65,11 +65,6 @@ $route['public/n-s-l']	= "home/salesList";
 $route['public/n-product'] = "home/newProductEntry";
 $route['public/n-s-product-l'] = "home/productList";
 
-
-			/***  Invoice Route ****/
-//$route['public/invoice'] = "home/newInvoice";
-//$route['public/n-s-product-l'] = "home/productList";
-
 			/***  Login Route ****/
 $route['public/signin'] = "home/login";
 

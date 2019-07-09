@@ -89,22 +89,41 @@ function en2bn($number) {
                     <table class="table table-bordered">
                         <tbody>
                             <tr>
-                                <th style="width: 15%"> কোড নং ঃ </th>
-                                <th style="width: 30%">২৩০</th>
-                                <th style="width: 15%">ইনভয়েস নং ঃ</th>
+                                <th style="width: 12%"> কোড নং ঃ </th>
+                                <th style="width: 30%">
+                                    <select class="form-control" name="" onchange="changevalue(this)" id="CodeNumber">
+                                        <option value="" disabled selected>Select One</option>
+                                        <?php foreach ($allCustomers as $data){ ?>
+                                                <option value="<?php echo $data->cus_code; ?>"><?php echo $data->cus_code; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </th>
+                                <th style="width: 12%">ইনভয়েস নং ঃ</th>
                                 <th style="width: 30%">১</th>
                             </tr>
                             <tr>
                                 <td>নাম ঃ</td>
-                                <td>আকতারা ফার্মেসি</td>
+                                <td>
+                                    <select class="form-control" name="" id="pharmacyName">
+                                        <option value="">check</option>
+                                    </select>
+                                </td>
                                 <td>তারিখ ঃ</td>
-                                <td>০৩-০৭-১৯</td>
+                                <td><input class="form-control" type="date" name="" id="dateId"></td>
                             </tr>
                             <tr>
                                 <td>ঠিকানা ঃ</td>
-                                <td>মুন্সির হাট, সন্দীপ</td>
+                                <td>
+                                    <select class="form-control" name="" id="pharmacyAddress">
+                                        <option value="">check</option>
+                                    </select>
+                                </td>
                                 <td>প্রতিনিধির নাম ঃ</td>
-                                <td>মাক্সুদুর রাহমান</td>
+                                <td>
+                                    <select class="form-control" id="salesMan">
+                                        <option value="">check</option>
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -114,20 +133,20 @@ function en2bn($number) {
                     <table class="table table-bordered">
                         <tbody id="invBody">
                             <tr>
-                                <th style="width: 15%;background-color: gray;color:#FFF"> কোড নং ঃ </th>
-                                <th style="width: 18%;background-color: gray;color:#FFF">২৩০</th>
-                                <th style="width: 12%;background-color: gray;color:#FFF">২৩০</th>
-                                <th style="width: 15%;background-color: gray;color:#FFF">ইনভয়েস নং ঃ</th>
-                                <th style="width: 10%;background-color: gray;color:#FFF">১</th>
-                                <th style="width: 20%;background-color: gray;color:#FFF">১</th>
+                                <th style="width: 12%;background-color: gray;color:#FFF">কোড নং</th>
+                                <th style="width: 20%;background-color: gray;color:#FFF">পন্যের নাম</th>
+                                <th style="width: 10%;background-color: gray;color:#FFF">মিঃ লিঃ </th>
+                                <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
+                                <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
+                                <th style="width: 20%;background-color: gray;color:#FFF">মোট টাকা</th>
                             </tr>
                             <tr>
-                                <td>নাম ঃ</td>
                                 <td></td>
-                                <td>তারিখ ঃ</td>
-                                <td>০৩-০৭-১৯</td>
-                                <td>তারিখ ঃ</td>
-                                <td>০৩-০৭-১৯</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -147,13 +166,32 @@ function en2bn($number) {
 <script>
 function appendNewRow(elm) {
     var html = '<tr>'+
-                '    <td>নাম ঃ</td>'+
                 '    <td></td>'+
-                '    <td>তারিখ ঃ</td>'+
-                '    <td>০৩-০৭-১৯</td>'+
-                '    <td>তারিখ ঃ</td>'+
-                '    <td>০৩-০৭-১৯</td>'+
+                '    <td></td>'+
+                '    <td></td>'+
+                '    <td></td>'+
+                '    <td></td>'+
+                '    <td></td>'+
                '</tr>';
         $('#invBody').append(html);
+}
+
+
+
+function changevalue(elm) {
+    // var data = {
+    //     data: $(elm).val()
+    // }
+    // console.log(data);
+    $.ajax({
+       type: 'POST',
+       url: '<?php echo base_url(); ?>home/getCustomerBy_code',
+       data: $(elm).val(),
+       success: function (res) {
+           // if (res.success) {
+            console.log(11, res)
+        // }           
+       }
+    });
 }
 </script>

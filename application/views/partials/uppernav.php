@@ -10,7 +10,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">logout</a>
+        <a class="nav-link" data-slide="true" href="<?php echo base_url(); ?>public/signin">logout</a>
       </li>
     </ul>
   </nav>
