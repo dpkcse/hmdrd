@@ -68,28 +68,23 @@ class Home extends CI_Controller {
 		$data = array();
 		$data['title'] = "Invoice";
 		$data['allCustomers'] = $this->admin_model->getAllCustomers();
-		// $data['allCustomers'] = $this->load->view('admin/pages/dashboard',$data,true);
-
+		$data['allproducts'] = $this->admin_model->getAllProducts();
+		// json_encode($data['allproducts'], JSON_UNESCAPED_UNICODE); 
 		$this->load->view('invoice', $data);
 	}
-
-	// public function getCustomerBy_code()
-	// {
-	// 	if($this->input->post('data'))
-	// 	{
-	// 		$data = $this->admin_model->getCustomerBy_code($this->input->post('data'));
-	// 		echo json_encode($data); 
-	// 	}
-	// }
-	// public function InvoiceDesign(){
-	// 	$this->load->view('v-invoice-design');
-	// }
 
 	public function getCustomerBy_code(){ 
 		// POST data 
 		$postData = $this->input->post();
 		// get data 
 		$data = $this->admin_model->getCustomerBy_code($postData);
+		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
+	}
+	public function getProductDetails(){ 
+		// POST data 
+		$postData = $this->input->post();
+		// get data 
+		$data = $this->admin_model->getProductDetails($postData);
 		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
 	}
 

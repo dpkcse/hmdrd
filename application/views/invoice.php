@@ -14,6 +14,7 @@ function en2bn($number) {
 <?php include('partials/head.php'); ?>
 <?php include('partials/uppernav.php'); ?>
 <?php include('partials/sidebar.php'); ?>
+
 <style>
 .form-group {
     margin-top: 1rem;
@@ -63,6 +64,9 @@ function en2bn($number) {
 }
 .select2{
     width:100% !important;
+}
+.select2-container .select2-selection--single{
+    height: 38px !important;
 }
 </style>
 <!-- Content Wrapper. Contains page content -->
@@ -147,21 +151,6 @@ function en2bn($number) {
                                 <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
                                 <th style="width: 20%;background-color: gray;color:#FFF">মোট টাকা</th>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                <select class="form-control medicinename " id="medicinename" style="width:82%;" onchange="selectandClr(this.value)">
-                                    <?php $customers   = $this->db->get('products')->result_array(); ?>
-                                    <?php foreach ($customers as $row2){ ?>
-                                    <option><?php echo $row2['pro_name']."(".$row2['amount'].") "; ?></option>
-                                    <?php } ?>
-                                </select>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -178,20 +167,34 @@ function en2bn($number) {
 <?php include('partials/foot.php'); ?>
 
 <script>
+var pro_name = [];
+
+<?php foreach($allproducts as $val){ ?>
+    pro_name.push('<?php echo $val->pro_name; ?>');
+<?php } ?>
+
+$('#salesMan').select2();
+$('#CodeNumber').select2();
+$('#pharmacyName').select2();
+$('#pharmacyAddress').select2();
 function appendNewRow(elm) {
-    var html = '<tr>'+
-                '    <td></td>'+
-                '    <td><select class="form-control medicinename " id="medicinename" style="width:82%;" onchange="selectandClr(this.value)"></select></td>'+
-                '    <td></td>'+
-                '    <td></td>'+
-                '    <td></td>'+
-                '    <td></td>'+
+    var _uniqueRow_id = $('#invBody tr').length;
+    var html = '<tr class="eachRow">'+
+                '    <td class="code_no"></td>'+
+                '    <td class="pro_name"><select class="form-control medicinename" id="col_id'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetails(this)"><option value="" selected disabled>Select One</option></select></td>'+
+                '    <td class="amount"></td>'+
+                '    <td class="qty"><input type="text" class="form-control pro_qty"></td>'+
+                '    <td class="sale_price"></td>'+
+                '    <td class="total_price"></td>'+
                '</tr>';
         $('#invBody').append(html);
+
+        jQuery.each(pro_name, function (k,v) {
+            $('#col_id'+_uniqueRow_id).append('<option value="'+v+'">'+v+'</option>');
+        });
         select22();
+
 }
-
-
 
 function changevalue(elm) {
     var cus_code = $(elm).val();
@@ -201,7 +204,6 @@ function changevalue(elm) {
        data: {cus_code: cus_code},
        success: function (res) {
            if (res) {
-            console.log(11, res)
             $('#pharmacyName').html('');
             $('#pharmacyAddress').html('');
             jQuery.each( JSON.parse(res), function (k,v) {
@@ -214,14 +216,32 @@ function changevalue(elm) {
 }
 function select22(){
     $('.medicinename').select2({
-        maximumSelectionLength: 1,
-        placeholder: "ঔষধের নাম সিলেক্ট করে এন্টার চাপুন"
+        placeholder: "ঔষধের নাম সিলেক্ট করুন"
     });
 }
-select22()
-var selectandClr = (value) =>{
-    console.log(value);
-   $(".select2-selection__choice__remove").click();
-   $(".select2").click();
-};
+
+function getProductDetails(elm) {
+    var _prnt = $(elm).parents('.eachRow');
+    console.log(_prnt);
+
+    var pro_name = $(elm).val();
+    $.ajax({
+       type: 'POST',
+       url: '<?php echo base_url(); ?>home/getProductDetails',
+       data: {pro_name: pro_name},
+       success: function (res) {
+           if (res) {
+               console.log(res)
+            // $('#pharmacyName').html('');
+            // $('#pharmacyAddress').html('');
+            jQuery.each( JSON.parse(res), function (k,v) {
+                $(_prnt).find('.code_no').text(v.code_no);
+                $(_prnt).find('.amount').text(v.amount);
+                $(_prnt).find('.sale_price').text(v.sale_price+' টাকা');
+            });
+        }           
+       }
+    });
+}
+
 </script>
