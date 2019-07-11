@@ -75,7 +75,7 @@ function en2bn($number) {
     <section class="content invoiceDesin">
         <div class="container" style="background-color: #FFF">
             <div class="box">
-                <div class="box-header with-border" style="display:none">
+                <div class="box-header with-border" style="display:block">
                     <div class="invoice_header">
                         <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াকফ) বাংলাদেশ</h2>
                         <p class="small_title">হামদর্দ ভবন, ৯৯ বীর উত্তম সি. আর দত্ত সড়ক, ধানমন্ডি,ঢাকা-১২০৫ </p>
@@ -135,7 +135,7 @@ function en2bn($number) {
                             <tr>
                                 <th style="width: 12%;background-color: gray;color:#FFF">কোড নং</th>
                                 <th style="width: 20%;background-color: gray;color:#FFF">ঔষধের নাম</th>
-                                <th style="width: 10%;background-color: gray;color:#FFF">মিঃ লিঃ </th>
+                                <th style="width: 10%;background-color: gray;color:#FFF">পরিবেশনা </th>
                                 <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
                                 <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
                                 <th style="width: 20%;background-color: gray;color:#FFF">টাকা</th>
@@ -251,7 +251,7 @@ function getProductDetailsByCode(elm) {
        data: {code_no: code_no},
        success: function (res) {
            if (res) {
-            $('.append_row').trigger('click');
+            // $('.append_row').trigger('click');
             $(_prnt).find('.qty .pro_qty').removeAttr('disabled').focus();
             $.each( JSON.parse(res), function (k,v) {
                 $(_prnt).find('.pro_name').text(v.pro_name);
@@ -279,11 +279,17 @@ function bn2en(number) {
 
 
 function multiplyQty(e) {
-    var tk = $(e.target).parents('.eachRow').find('.sale_price').attr('tk');
-    var qty = bn2en($(e.target).val());
-    var total_tk = parseInt(tk) * parseInt(qty);
-    var cnvtValue = converEn2Bn(total_tk);
-    $(e.target).parents('.eachRow').find('.total_price').text(cnvtValue);
+    var code = event.which || event.keyCode;
+    if (code == 13) {
+        if ($(e.target).val() != '') {
+            var tk = $(e.target).parents('.eachRow').find('.sale_price').attr('tk');
+            var qty = bn2en($(e.target).val());
+            var total_tk = parseInt(tk) * parseInt(qty);
+            var cnvtValue = converEn2Bn(total_tk);
+            $(e.target).parents('.eachRow').find('.total_price').text(cnvtValue);
+            $('.append_row').trigger('click');
+        }
+    }
 }
 
 
