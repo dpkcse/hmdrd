@@ -12,7 +12,7 @@ class Admin_model extends CI_Model {
     }
     public function getAllProducts()
     {
-        $this->db->select('pro_name');
+        $this->db->select('code_no,pro_name');
 		$this->db->from('products');
 		$query = $this->db->get()->result();
 		return $query;
@@ -28,10 +28,19 @@ class Admin_model extends CI_Model {
 		return $response;
 	}
 
-	function getProductDetails($postData){
+	// function getProductDetails($postData){
+	// 	$response = array();
+	// 	$this->db->select('*');
+	// 	$this->db->where('pro_name', $postData['pro_name']);
+	// 	$q = $this->db->get('products');
+	// 	$response = $q->result_array();
+
+	// 	return $response;
+	// }
+	function getProductDetailsByCode($postData){
 		$response = array();
 		$this->db->select('*');
-		$this->db->where('pro_name', $postData['pro_name']);
+		$this->db->where('code_no', $postData['code_no']);
 		$q = $this->db->get('products');
 		$response = $q->result_array();
 

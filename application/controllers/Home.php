@@ -78,9 +78,14 @@ class Home extends CI_Controller {
 		$data = $this->admin_model->getCustomerBy_code($postData);
 		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
 	}
-	public function getProductDetails(){ 
+	// public function getProductDetails(){ 
+	// 	$postData = $this->input->post();
+	// 	$data = $this->admin_model->getProductDetails($postData);
+	// 	echo json_encode($data, JSON_UNESCAPED_UNICODE); 
+	// }
+	public function getProductDetailsByCode(){ 
 		$postData = $this->input->post();
-		$data = $this->admin_model->getProductDetails($postData);
+		$data = $this->admin_model->getProductDetailsByCode($postData);
 		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
 	}
 	/****** Invoice function section end ******/

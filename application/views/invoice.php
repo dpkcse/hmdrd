@@ -71,22 +71,11 @@ function en2bn($number) {
 </style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">ইনভয়েস</h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
     <!-- /.content-header -->
-
     <section class="content invoiceDesin">
         <div class="container" style="background-color: #FFF">
             <div class="box">
-                <div class="box-header with-border">
+                <div class="box-header with-border" style="display:none">
                     <div class="invoice_header">
                         <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াকফ) বাংলাদেশ</h2>
                         <p class="small_title">হামদর্দ ভবন, ৯৯ বীর উত্তম সি. আর দত্ত সড়ক, ধানমন্ডি,ঢাকা-১২০৫ </p>
@@ -149,7 +138,7 @@ function en2bn($number) {
                                 <th style="width: 10%;background-color: gray;color:#FFF">মিঃ লিঃ </th>
                                 <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
                                 <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
-                                <th style="width: 20%;background-color: gray;color:#FFF">মোট টাকা</th>
+                                <th style="width: 20%;background-color: gray;color:#FFF">টাকা</th>
                             </tr>
                         </tbody>
                     </table>
@@ -167,33 +156,43 @@ function en2bn($number) {
 <?php include('partials/foot.php'); ?>
 
 <script>
-var pro_name = [];
+var productsDetails = [];
 
 <?php foreach($allproducts as $val){ ?>
-    pro_name.push('<?php echo $val->pro_name; ?>');
+    productsDetails.push({'name':'<?php echo $val->pro_name; ?>','code':'<?php echo $val->code_no; ?>'});
 <?php } ?>
+console.log(productsDetails);
 
 $('#salesMan').select2();
 $('#CodeNumber').select2();
 $('#pharmacyName').select2();
 $('#pharmacyAddress').select2();
+
 function appendNewRow(elm) {
     var _uniqueRow_id = $('#invBody tr').length;
     var html = '<tr class="eachRow">'+
-                '    <td class="code_no"></td>'+
-                '    <td class="pro_name"><select class="form-control medicinename" id="col_id'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetails(this)"><option value="" selected disabled>Select One</option></select></td>'+
+                '    <td class="code_no">'+
+                '       <select class="form-control code_select" id="code_no_'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetailsByCode(this)">'+
+                '           <option value="" selected disabled>Select One</option>'+
+                '       </select>'+
+                '    </td>'+
+                '    <td class="pro_name">'+
+                // '       <select class="form-control medicinename" id="col_id'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetails(this)">'+
+                // '           <option value="" selected disabled>Select One</option>'+
+                // '       </select>'+
+                '    </td>'+
                 '    <td class="amount"></td>'+
-                '    <td class="qty"><input type="text" class="form-control pro_qty"></td>'+
+                '    <td class="qty"><input type="text" onkeyup="multiplyQty(event)" class="form-control pro_qty" disabled></td>'+
                 '    <td class="sale_price"></td>'+
                 '    <td class="total_price"></td>'+
                '</tr>';
         $('#invBody').append(html);
 
-        jQuery.each(pro_name, function (k,v) {
-            $('#col_id'+_uniqueRow_id).append('<option value="'+v+'">'+v+'</option>');
+        jQuery.each(productsDetails, function (k,v) {
+            $('#col_id'+_uniqueRow_id).append('<option value="'+v.name+'">'+v.name+'</option>');
+            $('#code_no_'+_uniqueRow_id).append('<option value="'+v.code+'">'+v.code+'</option>');
         });
         select22();
-
 }
 
 function changevalue(elm) {
@@ -207,41 +206,104 @@ function changevalue(elm) {
             $('#pharmacyName').html('');
             $('#pharmacyAddress').html('');
             jQuery.each( JSON.parse(res), function (k,v) {
-                $('#pharmacyName').append('<option value="'+v.cus_name+'">'+v.cus_name+'</option>');
+                // $('#pharmacyName').append('<option value="'+v.cus_name+'">'+v.cus_name+'</option>');
                 $('#pharmacyAddress').append('<option value="'+v.cus_address+'">'+v.cus_address+'</option>');
             });
         }           
        }
     });
 }
+
 function select22(){
-    $('.medicinename').select2({
-        placeholder: "ঔষধের নাম সিলেক্ট করুন"
+    $('.medicinename, .code_select').select2({
+        placeholder: "সিলেক্ট করুন"
     });
 }
 
-function getProductDetails(elm) {
-    var _prnt = $(elm).parents('.eachRow');
-    console.log(_prnt);
+// function getProductDetails(elm) {
+//     var _prnt = $(elm).parents('.eachRow');
 
-    var pro_name = $(elm).val();
+//     var pro_name = $(elm).val();
+//     $.ajax({
+//        type: 'POST',
+//        url: '<?php// echo base_url(); ?>home/getProductDetails',
+//        data: {pro_name: pro_name},
+//        success: function (res) {
+//            if (res) {
+//                console.log(res)
+//             $.each( JSON.parse(res), function (k,v) {
+//                 // $(_prnt).find('.code_no').text(v.code_no);
+//                 $(_prnt).find('.amount').text(v.amount);
+//                 $(_prnt).find('.sale_price').text(v.sale_price);
+//             });
+//         }           
+//        }
+//     });
+// }
+
+function getProductDetailsByCode(elm) {
+    var _prnt = $(elm).parents('.eachRow');
+
+    var code_no = $(elm).val();
     $.ajax({
        type: 'POST',
-       url: '<?php echo base_url(); ?>home/getProductDetails',
-       data: {pro_name: pro_name},
+       url: '<?php echo base_url(); ?>home/getProductDetailsByCode',
+       data: {code_no: code_no},
        success: function (res) {
            if (res) {
-               console.log(res)
-            // $('#pharmacyName').html('');
-            // $('#pharmacyAddress').html('');
-            jQuery.each( JSON.parse(res), function (k,v) {
-                $(_prnt).find('.code_no').text(v.code_no);
+            $('.append_row').trigger('click');
+            $(_prnt).find('.qty .pro_qty').removeAttr('disabled');
+            $.each( JSON.parse(res), function (k,v) {
+                $(_prnt).find('.pro_name').text(v.pro_name);
                 $(_prnt).find('.amount').text(v.amount);
-                $(_prnt).find('.sale_price').text(v.sale_price+' টাকা');
+                $(_prnt).find('.sale_price').text(v.sale_price).attr('tk',bn2en(v.sale_price));
             });
         }           
        }
     });
+}
+
+function bn2en(number) {
+    var bn = ["১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "০"];
+    var en = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+    var a = number.split('');
+    var bnToEn = [];
+    $.each(a,function(k,v){
+        var i = bn.indexOf(v);
+        var text = en[i];
+        bnToEn.push(text);
+    });
+    return bnToEn.join("");
+}
+
+
+function multiplyQty(e) {
+    var tk = $(e.target).parents('.eachRow').find('.sale_price').attr('tk');
+    var qty = bn2en($(e.target).val());
+    var total_tk = parseInt(tk) * parseInt(qty);
+    var cnvtValue = converEn2Bn(total_tk);
+    $(e.target).parents('.eachRow').find('.total_price').text(cnvtValue);
+}
+
+
+function converBn2En(amount) {
+    var englishDigits = {'০': '0', '১': '1', '২': '2', '৩': '3', '৪': '4', '৫': '5', '৬': '6', '৭': '7', '৮': '8', '৯': '9' };
+    var banglaDigits = {'0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪', '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯' };
+    var amount_en = amount.replace(/[০১২৩৪৫৬৭৮৯]/g, function(s) {
+        return englishDigits[s];
+    });  
+    return amount_en;
+}
+
+
+function converEn2Bn(amount) {
+    var englishDigits = {'০': '0', '১': '1', '২': '2', '৩': '3', '৪': '4', '৫': '5', '৬': '6', '৭': '7', '৮': '8', '৯': '9' };
+    var banglaDigits = {'0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪', '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯' };
+    var amount_np = amount.toString().replace(/[0123456789]/g, function(s) {
+        return banglaDigits[s];
+    });
+        return amount_np;
 }
 
 </script>
