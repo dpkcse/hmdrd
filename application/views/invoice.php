@@ -91,10 +91,10 @@ function en2bn($number) {
                             <tr>
                                 <th style="width: 12%"> কোড নং ঃ </th>
                                 <th style="width: 30%">
-                                    <select class="form-control" name="" onchange="changevalue(this)" id="CodeNumber">
+                                    <select class="form-control inpSelect" name="" onchange="changevalue(this)" id="CodeNumber">
                                         <option value="" disabled selected>Select One</option>
                                         <?php foreach ($allCustomers as $data){ ?>
-                                                <option value="<?php echo $data->cus_code; ?>"><?php echo $data->cus_code; ?></option>
+                                            <option value="<?php echo $data->cus_code; ?>"><?php echo $data->cus_code; ?></option>
                                         <?php } ?>
                                     </select>
                                 </th>
@@ -104,7 +104,7 @@ function en2bn($number) {
                             <tr>
                                 <td>নাম ঃ</td>
                                 <td>
-                                    <select class="form-control" name="" id="pharmacyName">
+                                    <select class="form-control inpSelect" name="" id="pharmacyName">
                                         <option value="" selected disabled>Select One</option>
                                     </select>
                                 </td>
@@ -114,14 +114,17 @@ function en2bn($number) {
                             <tr>
                                 <td>ঠিকানা ঃ</td>
                                 <td>
-                                    <select class="form-control" name="" id="pharmacyAddress">
+                                    <select class="form-control inpSelect" name="" id="pharmacyAddress">
                                         <option value="" selected disabled>Select One</option>
                                     </select>
                                 </td>
                                 <td>প্রতিনিধির নাম ঃ</td>
                                 <td>
-                                    <select class="form-control" id="salesMan">
+                                    <select class="form-control inpSelect" id="salesMan">
                                         <option value="" selected disabled>Select One</option>
+                                        <?php foreach ($allStuff as $data){ ?>
+                                            <option value="<?php echo $data->stuff_name; ?>"><?php echo $data->stuff_name; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </td>
                             </tr>
@@ -161,25 +164,39 @@ var productsDetails = [];
 <?php foreach($allproducts as $val){ ?>
     productsDetails.push({'name':'<?php echo $val->pro_name; ?>','code':'<?php echo $val->code_no; ?>'});
 <?php } ?>
-console.log(productsDetails);
 
-$('#salesMan').select2();
-$('#CodeNumber').select2();
-$('#pharmacyName').select2();
-$('#pharmacyAddress').select2();
+// $('.inpSelect').select2();
+
+
+function changevalue(elm) {
+    var cus_code = $(elm).val();
+    $.ajax({
+       type: 'POST',
+       url: '<?php echo base_url(); ?>home/getCustomerBy_code',
+       data: {cus_code: cus_code},
+       success: function (res) {
+           if (res) {
+            $('#pharmacyName').html('');
+            $('#pharmacyAddress').html('');
+            jQuery.each( JSON.parse(res), function (k,v) {
+                $('#pharmacyName').append('<option value="'+v.cus_name+'">'+v.cus_name+'</option>');
+                $('#pharmacyAddress').append('<option value="'+v.cus_address+'">'+v.cus_address+'</option>');
+            });
+        }           
+       }
+    });
+}
+
 
 function appendNewRow(elm) {
     var _uniqueRow_id = $('#invBody tr').length;
     var html = '<tr class="eachRow">'+
                 '    <td class="code_no">'+
-                '       <select class="form-control code_select" id="code_no_'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetailsByCode(this)">'+
+                '       <select class="form-control inpSelect code_select" id="code_no_'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetailsByCode(this)">'+
                 '           <option value="" selected disabled>Select One</option>'+
                 '       </select>'+
                 '    </td>'+
                 '    <td class="pro_name">'+
-                // '       <select class="form-control medicinename" id="col_id'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetails(this)">'+
-                // '           <option value="" selected disabled>Select One</option>'+
-                // '       </select>'+
                 '    </td>'+
                 '    <td class="amount"></td>'+
                 '    <td class="qty"><input type="text" onkeyup="multiplyQty(event)" class="form-control pro_qty" disabled></td>'+
@@ -195,51 +212,12 @@ function appendNewRow(elm) {
         select22();
 }
 
-function changevalue(elm) {
-    var cus_code = $(elm).val();
-    $.ajax({
-       type: 'POST',
-       url: '<?php echo base_url(); ?>home/getCustomerBy_code',
-       data: {cus_code: cus_code},
-       success: function (res) {
-           if (res) {
-            $('#pharmacyName').html('');
-            $('#pharmacyAddress').html('');
-            jQuery.each( JSON.parse(res), function (k,v) {
-                // $('#pharmacyName').append('<option value="'+v.cus_name+'">'+v.cus_name+'</option>');
-                $('#pharmacyAddress').append('<option value="'+v.cus_address+'">'+v.cus_address+'</option>');
-            });
-        }           
-       }
-    });
-}
-
 function select22(){
-    $('.medicinename, .code_select').select2({
+    $('.inpSelect').select2({
         placeholder: "সিলেক্ট করুন"
     });
 }
-
-// function getProductDetails(elm) {
-//     var _prnt = $(elm).parents('.eachRow');
-
-//     var pro_name = $(elm).val();
-//     $.ajax({
-//        type: 'POST',
-//        url: '<?php// echo base_url(); ?>home/getProductDetails',
-//        data: {pro_name: pro_name},
-//        success: function (res) {
-//            if (res) {
-//                console.log(res)
-//             $.each( JSON.parse(res), function (k,v) {
-//                 // $(_prnt).find('.code_no').text(v.code_no);
-//                 $(_prnt).find('.amount').text(v.amount);
-//                 $(_prnt).find('.sale_price').text(v.sale_price);
-//             });
-//         }           
-//        }
-//     });
-// }
+select22();
 
 function getProductDetailsByCode(elm) {
     var _prnt = $(elm).parents('.eachRow');
@@ -251,7 +229,6 @@ function getProductDetailsByCode(elm) {
        data: {code_no: code_no},
        success: function (res) {
            if (res) {
-            // $('.append_row').trigger('click');
             $(_prnt).find('.qty .pro_qty').removeAttr('disabled').focus();
             $.each( JSON.parse(res), function (k,v) {
                 $(_prnt).find('.pro_name').text(v.pro_name);

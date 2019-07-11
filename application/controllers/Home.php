@@ -113,6 +113,7 @@ class Home extends CI_Controller {
 		$data['title'] = "Invoice";
 		$data['allCustomers'] = $this->admin_model->getAllCustomers();
 		$data['allproducts'] = $this->admin_model->getAllProducts();
+		$data['allStuff'] = $this->admin_model->getAllStuff();
 		// json_encode($data['allproducts'], JSON_UNESCAPED_UNICODE); 
 		$this->load->view('invoice', $data);
 	}

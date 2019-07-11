@@ -32,6 +32,13 @@ class Admin_model extends CI_Model {
 		$query = $this->db->get()->result();
 		return $query;
     }
+    public function getAllStuff()
+    {
+        $this->db->select('stuff_name');
+		$this->db->from('stuff');
+		$query = $this->db->get()->result();
+		return $query;
+    }
 		
 	function getCustomerBy_code($postData){
 		$response = array();
