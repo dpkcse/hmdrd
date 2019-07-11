@@ -21,6 +21,33 @@ class Home extends CI_Controller {
 
 	/* new customer function section */
 
+	public function save_stuff(){
+
+		$data=array();
+		$data['stuff_name']		= $this->input->post('stuff_name',true);
+		$data['stuff_phone']	= $this->input->post('stuff_phone',true);
+		$data['stuff_addr']		= $this->input->post('stuff_addr',true);
+
+		$this->admin_model->save_stuff($data);
+		redirect('public/n-s-person');
+	}
+
+	public function save_custmers(){
+
+		$data=array();
+		$data['cus_code']			= $this->input->post('cus_code',true);
+		$data['cus_name']	        = $this->input->post('cus_name',true);
+		$data['cont_person_name']	= $this->input->post('cont_person_name',true);
+		$data['cont_person_phone']	= $this->input->post('cont_person_phone',true);
+		$data['cus_mobile']			= $this->input->post('cus_mobile',true);
+		$data['cus_address']		= $this->input->post('cus_address',true);
+
+		$this->admin_model->save_custmers($data);
+		redirect('public/n-customer');
+	}
+
+	/* new customer function section */
+
 	public function newCustomer(){
 		$this->load->view('v-new-customer');
 	}

@@ -3,6 +3,16 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 
+	public function save_stuff($data)
+	{
+		$this->db->insert('stuff',$data);
+	}
+
+	public function save_custmers($data)
+	{
+		$this->db->insert('customers',$data);
+	}
+
     public function getAllCustomers()
     {
         $this->db->select('*');
