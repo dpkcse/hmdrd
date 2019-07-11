@@ -72,7 +72,24 @@ class Home extends CI_Controller {
 	/****** Product Entry function section ******/
 	
 	public function newProductEntry(){
-		$this->load->view('v-new-item');
+		$this->load->view('add-product');
+	}
+
+	public function save_products(){
+		
+		$data=array();
+		$data['code_no']		= $this->input->post('code_no',true);
+		$data['pro_name']	    = $this->input->post('pro_name',true);
+		$data['pro_details']	= $this->input->post('pro_details',true);
+		$data['pro_type']	    = $this->input->post('pro_type',true);
+		$data['amount']			= $this->input->post('amount',true);
+		$data['buy_price']		= $this->input->post('buy_price',true);
+		$data['sale_price']		= $this->input->post('sale_price',true);
+		$data['pro_mrp']		= $this->input->post('pro_mrp',true);
+
+		$this->admin_model->save_products($data);
+
+		redirect('public/n-product');
 	}
 	
 	public function productList(){

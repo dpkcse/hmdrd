@@ -43,25 +43,32 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="<?php echo base_url();?>public/add_products"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
-                                <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্ট নামঃ </label>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্ট কোডঃ </label>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="প্রোডাক্টের নাম এইখানে লিখুন">
-                                </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="code_no" class="form-control" placeholder="প্রোডাক্টের কোড এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="inputPassword3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিবরণঃ  </label>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্ট নামঃ </label>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="pro_name" class="form-control" placeholder="প্রোডাক্টের নাম এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিবরণঃ  </label>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="প্রোডাক্টের বিবরণ এইখানে লিখুন">
+                                    <input type="text" name="pro_details" class="form-control" placeholder="প্রোডাক্টের বিবরণ এইখানে লিখুন">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ধরনঃ</label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <select class="form-control select2" style="width: 100%;">
+                                        <select  name="pro_type" class="form-control select2" style="width: 100%;">
                                             <option selected="selected">সিরাপ</option>
                                             <option>ট্যাবলেট</option>
                                         </select>
@@ -70,32 +77,32 @@
                                 <div class="form-group">
                                     <label class="col-lg-12 col-md-12 col-sm-12 control-label">পরিমানঃ</label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" class="form-control" id="inputPassword3" placeholder="উদাঃ ৪৫০ মিঃ লিঃ/ ২ পাতা">
+                                        <input type="text" name="amount" class="form-control" placeholder="উদাঃ ৪৫০ মিঃ লিঃ/ ২ পাতা">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                <label for="inputPassword3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
+                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="number" class="form-control" id="inputPassword3" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
+                                    <input type="number" name="buy_price" class="form-control" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
                                 </div>
                                 <div class="form-group">
-                                <label for="inputPassword3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিক্রয়মূল্যঃ  </label>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিক্রয়মূল্যঃ  </label>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="প্রোডাক্টের বিক্রয়মূল্য এইখানে লিখুন">
-                                </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="sale_price" class="form-control" placeholder="প্রোডাক্টের বিক্রয়মূল্য এইখানে লিখুন">
+                                    </div>
                                 <div class="form-group">
-                                <label for="inputPassword3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের এম আর পি (MRP):   </label>
+                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের এম আর পি (MRP):   </label>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="রোডাক্টের এম আর পি (MRP) এইখানে লিখুন">
+                                    <input type="text" name="pro_mrp" class="form-control" placeholder="রোডাক্টের এম আর পি (MRP) এইখানে লিখুন">
                                 </div>
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer text-center">
-                                <button type="submit" class="btn btn-defaul" style="margin-right: 1%;">বাতিল</button>
+                                <button type="reset" class="btn btn-defaul" style="margin-right: 1%;">বাতিল</button>
                                 <button type="submit" class="btn btn-info">সেইভ করুন</button>
                             </div>
                         <!-- /.box-footer -->

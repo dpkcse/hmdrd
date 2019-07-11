@@ -67,6 +67,7 @@ $route['public/n-s-l']	= "home/salesList";
 			/***  Product Route ****/
 $route['public/n-product'] = "home/newProductEntry";
 $route['public/n-s-product-l'] = "home/productList";
+$route['public/add_products'] = "home/save_products";
 
 			/***  Login Route ****/
 $route['public/signin'] = "home/login";

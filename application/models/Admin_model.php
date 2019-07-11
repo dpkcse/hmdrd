@@ -13,6 +13,11 @@ class Admin_model extends CI_Model {
 		$this->db->insert('customers',$data);
 	}
 
+	public function save_products($data)
+	{
+		$this->db->insert('products',$data);
+	}
+
     public function getAllCustomers()
     {
         $this->db->select('*');
