@@ -252,7 +252,7 @@ function getProductDetailsByCode(elm) {
        success: function (res) {
            if (res) {
             $('.append_row').trigger('click');
-            $(_prnt).find('.qty .pro_qty').removeAttr('disabled');
+            $(_prnt).find('.qty .pro_qty').removeAttr('disabled').focus();
             $.each( JSON.parse(res), function (k,v) {
                 $(_prnt).find('.pro_name').text(v.pro_name);
                 $(_prnt).find('.amount').text(v.amount);
