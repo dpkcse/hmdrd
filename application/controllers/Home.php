@@ -16,7 +16,9 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('dashboard');
+		$data = array();
+		$data['title'] = "Dashboard";
+		$this->load->view('dashboard',$data);
 	}
 
 	/* new customer function section */
@@ -53,30 +55,39 @@ class Home extends CI_Controller {
 	/* new customer function section */
 
 	public function newCustomer(){
-		$this->load->view('v-new-customer');
+		$data = array();
+		$data['title'] = "Customer";
+		$this->load->view('v-new-customer',$data);
 	}
 
 
 	public function customerList(){
-		$this->load->view('v-new-customer-list');
+		$data = array();
+		$data['title'] = "Customer List";
+		$this->load->view('v-new-customer-list',$data);
 	}
 
 	/******  Sales person function section ******/
 
 	public function newSalesPerson(){
-		$this->load->view('add-employee');
+		$data = array();
+		$data['title'] = "Employee";
+		$this->load->view('add-employee',$data);
 	}
 
 	public function salesList(){
-		$this->load->view('v-new-stuff-list');
-	
+		$data = array();
+		$data['title'] = "Employee";
+		$this->load->view('v-new-stuff-list',$data);
 	}
 
 
 	/****** Product Entry function section ******/
 	
 	public function newProductEntry(){
-		$this->load->view('add-product');
+		$data = array();
+		$data['title'] = "Product";
+		$this->load->view('add-product',$data);
 	}
 
 	public function save_products(){
@@ -97,7 +108,9 @@ class Home extends CI_Controller {
 	}
 	
 	public function productList(){
-		$this->load->view('v-new-product-list');
+		$data = array();
+		$data['title'] = "Product List";
+		$this->load->view('v-new-product-list',$data);
 	}	
 	
 	

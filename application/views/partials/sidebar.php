@@ -25,25 +25,25 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="<?php echo base_url(); ?>home" class="nav-link active">
+            <a href="<?php echo base_url(); ?>home" class="nav-link <?php if($title == 'Dashboard'){?>active<?php }?>">
             <i class="nav-icon fa fa-dashboard"></i>
               <p> ড্যাশবোর্ড</p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview <?php if($title == 'Customer' || $title == 'Customer List'){?>menu-open<?php }?>">
             <a href="" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p>কাষ্টমার <i class="right fa fa-angle-left"></i></p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>public/n-customer" class="nav-link">
+                    <a href="<?php echo base_url(); ?>public/n-customer" class="nav-link <?php if($title == 'Customer'){?>active<?php }?>">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>নতুন কাষ্টমার</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>public/customer-l" class="nav-link">
+                    <a href="<?php echo base_url(); ?>public/customer-l" class="nav-link <?php if($title == 'Customer List'){?>active<?php }?>">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>কাষ্টমার লিষ্ট</p>
                     </a>
