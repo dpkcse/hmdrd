@@ -43,7 +43,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?php echo base_url();?>public/add_products"  method="post">
+                        <form class="form-horizontal" id="product_form" action="<?php echo base_url();?>public/add_products"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্ট কোডঃ </label>
@@ -120,3 +120,33 @@
     
 
 <?php include('partials/foot.php'); ?>
+
+
+<script type="text/javascript">
+    $('#product_form').validate({
+    rules: {
+        code_no: {
+            required: true,
+        },
+        pro_name: {
+            required: true,
+        },
+        pro_details: {
+            required: true,
+        },
+        amount: {   
+            required: true,
+        },
+        buy_price: {
+            required: true,
+        },
+        sale_price: {
+            required: true,
+        },
+        pro_mrp: {
+            required: true,
+        },
+    }
+});
+
+</script>

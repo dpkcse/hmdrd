@@ -43,7 +43,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?php echo base_url();?>public/add_stuff"  method="post">
+                        <form class="form-horizontal" id="stuff_form" action="<?php echo base_url();?>public/add_stuff"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিনিধির নামঃ </label>
@@ -86,3 +86,21 @@
     
 
 <?php include('partials/foot.php'); ?>
+
+<script type="text/javascript">
+    $('#stuff_form').validate({
+    rules: {
+        stuff_name: {
+            required: true,
+        },
+        stuff_phone: {
+            required: true,
+            number: true
+        },
+        stuff_addr: {
+            required: true,
+        },
+    }
+});
+
+</script>

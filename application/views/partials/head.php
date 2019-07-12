@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- jQuery -->
+<script src="<?php echo base_url(); ?>Assets/plugins/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/dist/js/jquery.validate.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

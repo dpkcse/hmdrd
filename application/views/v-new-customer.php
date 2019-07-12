@@ -43,7 +43,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="<?php echo base_url();?>public/add_custmers"  method="post">
+                        <form class="form-horizontal" id="customer_form" action="<?php echo base_url();?>public/add_custmers"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                 <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিষ্ঠানের কোডঃ </label>
@@ -105,3 +105,31 @@
     
 
 <?php include('partials/foot.php'); ?>
+
+<script type="text/javascript">
+    $('#customer_form').validate({
+    rules: {
+        cus_code: {
+            required: true,
+        },
+        cus_name: {
+            required: true,
+        },
+        cont_person_name: {
+            required: true,
+        },
+        cont_person_phone: {   
+            required: true,
+            number: true
+        },
+        cus_mobile: {
+            required: true,
+            number: true
+        },
+        cus_address: {
+            required: true,
+        },
+    }
+});
+
+</script>
