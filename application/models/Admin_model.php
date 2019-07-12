@@ -3,9 +3,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 
-	public function save_stuff($data)
+	public function save_employee($data)
 	{
-		$this->db->insert('stuff',$data);
+		$this->db->insert('hmdrd_employees',$data);
 	}
 
 	public function save_custmers($data)
@@ -32,10 +32,10 @@ class Admin_model extends CI_Model {
 		$query = $this->db->get()->result();
 		return $query;
     }
-    public function getAllStuff()
+    public function getAllEmployees()
     {
-        $this->db->select('stuff_name');
-		$this->db->from('stuff');
+        $this->db->select('username');
+		$this->db->from('hmdrd_employees');
 		$query = $this->db->get()->result();
 		return $query;
     }

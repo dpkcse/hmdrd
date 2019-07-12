@@ -47,46 +47,50 @@ function en2bn($number) {
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
                  <!-- right column -->
                 <div class="col-md-12">
                     <!-- Horizontal Form -->
-                    <div class="box box-info">
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>সিরিয়াল নং</th>
-                                    <th>কোড নং</th>
-                                    <th>প্রোডাক্টের নাম</th>
-                                    <th>পরিমান</th>
-                                    <th>ক্রয় মূল্য</th>
-                                    <th>বিক্রয় মূল্য</th>
-                                    <th>#</th>
-                                </tr>
-                            </thead>
-                            <?php $customers   = $this->db->get('products')->result_array(); ?>
-                            <tbody>
-                            <?php foreach ($customers as $row2){ ?>
-                                <tr>
-                                    <td><?php echo en2bn($row2['id']); ?></td>
-                                    <td><?php echo en2bn($row2['code_no']); ?></td>
-                                    <td><?php echo $row2['pro_name']; ?></td>
-                                    <td><?php echo $row2['amount']; ?></td>
-                                    <td> <?php echo $row2['buy_price']; ?></td>
-                                    <td> <?php echo $row2['sale_price']; ?></td>
-                                    <td>X</td>
-                                </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
+                    <div class="card">
+                        <!-- <div class="card-header">
+                            <h3 class="card-title">Data Table With Full Features</h3>
+                        </div> -->
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>সিরিয়াল নং</th>
+                                        <th>কোড নং</th>
+                                        <th>প্রোডাক্টের নাম</th>
+                                        <th>পরিমান</th>
+                                        <th>ক্রয় মূল্য</th>
+                                        <th>বিক্রয় মূল্য</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <?php $customers   = $this->db->get('products')->result_array(); ?>
+                                <tbody>
+                                <?php foreach ($customers as $row2){ ?>
+                                    <tr>
+                                        <td><?php echo en2bn($row2['id']); ?></td>
+                                        <td><?php echo en2bn($row2['code_no']); ?></td>
+                                        <td><?php echo $row2['pro_name']; ?></td>
+                                        <td><?php echo $row2['amount']; ?></td>
+                                        <td> <?php echo $row2['buy_price']; ?></td>
+                                        <td> <?php echo $row2['sale_price']; ?></td>
+                                        <td>X</td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 <!-- /.box -->
                 </div>
             </div>
             <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
     </section>
 <!-- /.content -->
 </div>

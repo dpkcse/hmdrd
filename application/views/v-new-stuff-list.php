@@ -32,49 +32,51 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
             <div class="row">
                  <!-- right column -->
                 <div class="col-md-12">
-                    <!-- Horizontal Form -->
-                    <div class="box box-info">
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>সিরিয়াল নং</th>
-                                    <th>কোড নং</th>
-                                    <th>প্রতিনিধির নাম</th>
-                                    <th> প্রতিনিধির ঠিকানা</th>
-                                    <th>মোবাইল নং</th>
-                                    <th>#</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>১</td>
-                                    <td>GA1</td>
-                                    <td>রাসেল ফার্মেসী</td>
-                                    <td>বাংলা বাজার, সারিকাইত, সন্দ্বীপ</td>
-                                    <td> ০১৭১৫৮৯৮৯৮৯</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr>
-                                    <td>১</td>
-                                    <td>GA1</td>
-                                    <td>দীপা ফার্মেসী</td>
-                                    <td>বাংলা বাজার, সারিকাইত, সন্দ্বীপ</td>
-                                    <td> ০১৭১৫৮৯৮৯৮৯</td>
-                                    <td>X</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card">
+                        <!-- <div class="card-header">
+                            <h3 class="card-title">Data Table With Full Features</h3>
+                        </div> -->
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>সিরিয়াল নং</th>
+                                        <th>কোড নং</th>
+                                        <th>প্রতিনিধির নাম</th>
+                                        <th> প্রতিনিধির ঠিকানা</th>
+                                        <th>মোবাইল নং</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>১</td>
+                                        <td>GA1</td>
+                                        <td>রাসেল ফার্মেসী</td>
+                                        <td>বাংলা বাজার, সারিকাইত, সন্দ্বীপ</td>
+                                        <td> ০১৭১৫৮৯৮৯৮৯</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>১</td>
+                                        <td>GA1</td>
+                                        <td>দীপা ফার্মেসী</td>
+                                        <td>বাংলা বাজার, সারিকাইত, সন্দ্বীপ</td>
+                                        <td> ০১৭১৫৮৯৮৯৮৯</td>
+                                        <td>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 <!-- /.box -->
                 </div>
             </div>
             <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
     </section>
 <!-- /.content -->
 </div>

@@ -21,14 +21,18 @@ class Home extends CI_Controller {
 
 	/* new customer function section */
 
-	public function save_stuff(){
+	public function save_employee(){
 
 		$data=array();
-		$data['stuff_name']		= $this->input->post('stuff_name',true);
-		$data['stuff_phone']	= $this->input->post('stuff_phone',true);
-		$data['stuff_addr']		= $this->input->post('stuff_addr',true);
+		$data['person_name']	= $this->input->post('person_name',true);
+		$data['username']		= $this->input->post('username',true);
+		$data['password']		= $this->input->post('password',true);
+		$data['language']		= $this->input->post('language',true);
+		$data['language_code']	= $this->input->post('language_code',true);
+		$data['person_phone']	= $this->input->post('person_phone',true);
+		$data['person_addr']	= $this->input->post('person_addr',true);
 
-		$this->admin_model->save_stuff($data);
+		$this->admin_model->save_employee($data);
 		redirect('public/n-s-person');
 	}
 
@@ -60,7 +64,7 @@ class Home extends CI_Controller {
 	/******  Sales person function section ******/
 
 	public function newSalesPerson(){
-		$this->load->view('v-new-stuff');
+		$this->load->view('add-employee');
 	}
 
 	public function salesList(){
@@ -113,7 +117,7 @@ class Home extends CI_Controller {
 		$data['title'] = "Invoice";
 		$data['allCustomers'] = $this->admin_model->getAllCustomers();
 		$data['allproducts'] = $this->admin_model->getAllProducts();
-		// $data['allStuff'] = $this->admin_model->getAllStuff();
+		$data['allEmployees'] = $this->admin_model->getAllEmployees();
 		// json_encode($data['allproducts'], JSON_UNESCAPED_UNICODE); 
 		$this->load->view('invoice', $data);
 	}

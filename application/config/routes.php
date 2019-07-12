@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 			/***  Stuff Route ****/
-$route['public/add_stuff'] = "home/save_stuff";
+$route['public/add_stuff'] = "home/save_employee";
 
 			/***  Stuff Route ****/
 $route['public/add_custmers'] = "home/save_custmers";

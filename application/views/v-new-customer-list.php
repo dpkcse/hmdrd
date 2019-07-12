@@ -47,13 +47,16 @@ function en2bn($number) {
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                 <!-- right column -->
-                <div class="col-md-12">
-                    <!-- Horizontal Form -->
-                    <div class="box box-info">
+        <div class="row">
+                <!-- right column -->
+            <div class="col-md-12">
+                <!-- Horizontal Form -->
+                <div class="card">
+                    <!-- <div class="card-header">
+                        <h3 class="card-title">Data Table With Full Features</h3>
+                    </div> -->
+                    <!-- /.card-header -->
+                    <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -80,11 +83,11 @@ function en2bn($number) {
                             </tbody>
                         </table>
                     </div>
-                <!-- /.box -->
                 </div>
+            <!-- /.box -->
             </div>
-            <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.row (main row) -->
     </section>
 <!-- /.content -->
 </div>

@@ -1,8 +1,8 @@
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-light-info elevation-4">
     <!-- Brand Logo -->
-    <a href="/hmdrd" class="brand-link">
+    <a href="/hmdrd" class="brand-link navbar-info">
       <img src="<?php echo base_url(); ?>Assets/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:50px;">
       <span class="brand-text font-weight-light">আজাদ এন্টারপ্রাইজ</span>
     </a>
@@ -26,7 +26,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="<?php echo base_url(); ?>home" class="nav-link active">
-              <i class="nav-icon fa fa-tree"></i>
+            <i class="nav-icon fa fa-dashboard"></i>
               <p> ড্যাশবোর্ড</p>
             </a>
           </li>
