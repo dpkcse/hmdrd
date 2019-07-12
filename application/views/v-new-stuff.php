@@ -68,7 +68,7 @@
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer text-center">
-                                <button type="reset" class="btn btn-defaul" style="margin-right: 1%;">বাতিল</button>
+                                <input type="reset" class="btn btn-defaul" value="বাতিল" style="margin-right: 1%;">
                                 <button type="submit" class="btn btn-info">সেইভ করুন</button>
                             </div>
                         <!-- /.box-footer -->

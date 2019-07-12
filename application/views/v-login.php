@@ -18,7 +18,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url(<?php echo base_url(); ?>Assets/dist/img/bg.jpg);">
 <div class="login-box">
   <div class="login-logo">
   <img src="<?php echo base_url(); ?>Assets/dist/img/hmdrdLoginLogo.png" alt="AdminLTE Logo" style="opacity: .8;width:80%;">

@@ -35,6 +35,10 @@ function en2bn($number) {
     justify-content: center;
     align-items:center;
     color: red;
+    background-image: url(<?php echo base_url(); ?>Assets/dist/img/logo.png);
+    background-repeat: no-repeat;   
+    background-size: 65px;
+    background-position-x: calc(50% - 320px);
 }
 .small_title{
     display: flex;
@@ -73,15 +77,15 @@ function en2bn($number) {
 <div class="content-wrapper">
     <!-- /.content-header -->
     <section class="content invoiceDesin">
-        <div class="container" style="background-color: #FFF">
+        <div class="container-fluid" style="background-color: #FFF">
             <div class="box">
                 <div class="box-header with-border" style="display:block">
                     <div class="invoice_header">
-                        <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াকফ) বাংলাদেশ</h2>
-                        <p class="small_title">হামদর্দ ভবন, ৯৯ বীর উত্তম সি. আর দত্ত সড়ক, ধানমন্ডি,ঢাকা-১২০৫ </p>
-                        <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p>
-                        <p class="small_title">তালতলি বাজার, সন্দীপ, চর্ট্রগ্রাম ।</p>
-                        <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p>
+                        <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
+                        <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
+                        <!-- <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p> -->
+                        <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
+                        <!-- <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p> -->
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -207,7 +211,7 @@ function appendNewRow(elm) {
 
         jQuery.each(productsDetails, function (k,v) {
             $('#col_id'+_uniqueRow_id).append('<option value="'+v.name+'">'+v.name+'</option>');
-            $('#code_no_'+_uniqueRow_id).append('<option value="'+v.code+'">'+v.code+'</option>');
+            $('#code_no_'+_uniqueRow_id).append('<option value="'+v.code+'">'+converEn2Bn(v.code)+'</option>');
         });
         select22();
 }
