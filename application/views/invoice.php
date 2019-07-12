@@ -38,7 +38,7 @@ function en2bn($number) {
     background-image: url(<?php echo base_url(); ?>Assets/dist/img/logo.png);
     background-repeat: no-repeat;   
     background-size: 65px;
-    background-position-x: calc(50% - 320px);
+    background-position-x: calc(50% - 300px);
 }
 .small_title{
     display: flex;
@@ -71,6 +71,13 @@ function en2bn($number) {
 }
 .select2-container .select2-selection--single{
     height: 38px !important;
+}
+.invoiceDesin .table tr td, .invoiceDesin .table tr th {
+    line-height: 20px;
+    padding: 5px 15px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem - 2px);
 }
 </style>
 <!-- Content Wrapper. Contains page content -->
@@ -126,9 +133,9 @@ function en2bn($number) {
                                 <td>
                                     <select class="form-control inpSelect" id="salesMan">
                                         <option value="" selected disabled>Select One</option>
-                                        <?php foreach ($allStuff as $data){ ?>
-                                            <option value="<?php echo $data->stuff_name; ?>"><?php echo $data->stuff_name; ?></option>
-                                        <?php } ?>
+                                        <?php// foreach ($allStuff as $data){ ?>
+                                            <option value="<?php// echo $data->stuff_name; ?>"><?php// echo $data->stuff_name; ?></option>
+                                        <?php// } ?>
                                     </select>
                                 </td>
                             </tr>
