@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p>কাষ্টমার <i class="right fa fa-angle-left"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -52,7 +52,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> প্রতিনিধি <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -72,7 +72,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> প্রোডাক্ট <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -92,7 +92,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> ইনভেন্টরি <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -112,7 +112,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> ইনভয়েস <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -132,7 +132,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> অর্ডার <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
@@ -152,7 +152,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-th"></i>
               <p> রির্পোট <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
