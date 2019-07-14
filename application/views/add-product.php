@@ -54,21 +54,21 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্ট নামঃ </label>
-
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="pro_name" class="form-control" placeholder="প্রোডাক্টের নাম এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিবরণঃ  </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="pro_details" class="form-control" placeholder="প্রোডাক্টের বিবরণ এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিবরণঃ  </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="pro_details" class="form-control" placeholder="প্রোডাক্টের বিবরণ এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ধরনঃ</label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <select  name="pro_type" class="form-control select2" style="width: 100%;">
+                                            <option value="" disabled selected>সিলেক্ট করুন</option>
                                             <option selected="selected">সিরাপ</option>
                                             <option>ট্যাবলেট</option>
                                         </select>
@@ -80,24 +80,23 @@
                                         <input type="text" name="amount" class="form-control" placeholder="উদাঃ ৪৫০ মিঃ লিঃ/ ২ পাতা">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="number" name="buy_price" class="form-control" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="number" name="buy_price" class="form-control" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের বিক্রয়মূল্যঃ  </label>
-
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="sale_price" class="form-control" placeholder="প্রোডাক্টের বিক্রয়মূল্য এইখানে লিখুন">
                                     </div>
+                                </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের এম আর পি (MRP):   </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="pro_mrp" class="form-control" placeholder="রোডাক্টের এম আর পি (MRP) এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের এম আর পি (MRP):   </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="pro_mrp" class="form-control" placeholder="রোডাক্টের এম আর পি (MRP) এইখানে লিখুন">
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
@@ -132,6 +131,9 @@
             required: true,
         },
         pro_details: {
+            required: true,
+        },
+        pro_type: {
             required: true,
         },
         amount: {   

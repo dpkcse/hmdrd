@@ -7,8 +7,7 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->insert('hmdrd_people',$data);
 		 $fdata['person_id'] = $this->db->insert_id();
-		  //insert into table hmdrd_employees
-		  $this->db->insert('hmdrd_employees',$fdata); 
+		$this->db->insert('hmdrd_employees',$fdata); 
 	}
 
 	public function save_custmers($data)
