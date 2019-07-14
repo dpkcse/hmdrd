@@ -118,8 +118,6 @@ class Home extends CI_Controller {
 	}	
 	
 	
-
-
 	/****** Login System function section ******/
 
 	public function login(){

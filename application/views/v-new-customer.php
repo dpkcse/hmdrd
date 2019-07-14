@@ -46,43 +46,40 @@
                         <form class="form-horizontal" id="customer_form" action="<?php echo base_url();?>public/add_custmers"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিষ্ঠানের কোডঃ </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cus_code" class="form-control" id="" placeholder="প্রতিষ্ঠানের কোড এইখানে লিখুন">
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিষ্ঠানের নামঃ </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cus_name" class="form-control" id="" placeholder="প্রতিষ্ঠানের নাম এইখানে লিখুন">
-                                </div>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিষ্ঠানের কোডঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cus_code" class="form-control" id="" placeholder="প্রতিষ্ঠানের কোড এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর নামঃ </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cont_person_name" class="form-control" id="" placeholder="যোগাযোগকারীর নাম এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিষ্ঠানের নামঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cus_name" class="form-control" id="" placeholder="প্রতিষ্ঠানের নাম এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর ফোন নাম্বারঃ  </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cont_person_phone" class="form-control" id="" placeholder="যোগাযোগকারীর ফোন নাম্বার এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর নামঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cont_person_name" class="form-control" id="" placeholder="যোগাযোগকারীর নাম এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">দোকানের ফোন নাম্বারঃ  </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cus_mobile" class="form-control" id="" placeholder="দোকানের ফোন নাম্বার এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর ফোন নাম্বারঃ  </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cont_person_phone" class="form-control" id="" placeholder="যোগাযোগকারীর ফোন নাম্বার এইখানে লিখুন">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ঠিকানাঃ </label>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="cus_address" class="form-control" id="" placeholder="দোকানের ঠিকানা এইখানে লিখুন">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">দোকানের ফোন নাম্বারঃ  </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cus_mobile" class="form-control" id="" placeholder="দোকানের ফোন নাম্বার এইখানে লিখুন">
+                                    </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ঠিকানাঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="cus_address" class="form-control" id="" placeholder="দোকানের ঠিকানা এইখানে লিখুন">
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
