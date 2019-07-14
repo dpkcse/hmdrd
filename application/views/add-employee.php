@@ -72,7 +72,6 @@
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">লিঙ্গ ঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="gender" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
                                         <select name="gender" class="form-control" id="">
                                             <option value="" disabled selected></option>
                                             <option value="পুরুষ">পুরুষ</option>
