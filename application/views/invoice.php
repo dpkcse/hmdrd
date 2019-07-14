@@ -88,128 +88,131 @@ select.form-control:not([size]):not([multiple]) {
 }
 </style>
 <!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper">
     <!-- /.content-header -->
     <section class="content invoiceDesin">
-        <div class="container-fluid" style="background-color: #FFF">
-            <div class="box">
-                <div class="box-header with-border" style="display:none">
-                    <div class="invoice_header">
-                        <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
-                        <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
-                        <!-- <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p> -->
-                        <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
-                        <!-- <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p> -->
+        <form action="<?php echo base_url('Home/save_sales'); ?>" method="POST">
+            <div class="container-fluid" style="background-color: #FFF">
+                <div class="box">
+                    <div class="box-header with-border" style="display:none">
+                        <div class="invoice_header">
+                            <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
+                            <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
+                            <!-- <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p> -->
+                            <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
+                            <!-- <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p> -->
+                        </div>
                     </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="row">
-                    <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr>                                
-                                    <td style="width: 12%">ইনভয়েস নং ঃ</td>
-                                    <td style="width: 30%">
-                                        <input type="text" class="form-control" name="" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo '#invoice_'.$uniqidD ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>তারিখ ঃ</td>
-                                    <td><input class="form-control" type="date" name="" id="dateId"></td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 12%"> কোড নং ঃ </td>
-                                    <td style="width: 30%">
-                                        <select class="form-control inpSelect" name="" onchange="changevalue(this)" id="CodeNumber">
-                                            <option value="" disabled selected>Select One</option>
-                                            <?php foreach ($allCustomers as $data){ ?>
-                                                <option value="<?php echo $data->cus_code; ?>"><?php echo $data->cus_code; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>নাম ঃ</td>
-                                    <td>
-                                        <select class="form-control inpSelect" name="" id="pharmacyName">
-                                            <option value="" selected disabled>Select One</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>ঠিকানা ঃ</td>
-                                    <td>
-                                        <select class="form-control inpSelect" name="" id="pharmacyAddress">
-                                            <option value="" selected disabled>Select One</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>প্রতিনিধির নাম ঃ</td>
-                                    <td>
-                                        <select class="form-control inpSelect" id="salesMan">
-                                            <option value="" selected disabled>Select One</option>
-                                            <?php foreach ($allEmployees as $data){ ?>
-                                                <option value="<?php echo $data->stuff_name; ?>"><?php echo $data->stuff_name; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- /.box-header -->
+                    <div class="row">
+                        <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>                                
+                                        <td style="width: 12%">ইনভয়েস নং ঃ</td>
+                                        <td style="width: 30%">
+                                            <input type="text" class="form-control" name="invoiceid" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo '#invoice_'.$uniqidD ?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>তারিখ ঃ</td>
+                                        <td><input class="form-control" type="date" name="salesDate" id="dateId"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 12%"> কোড নং ঃ </td>
+                                        <td style="width: 30%">
+                                            <select class="form-control inpSelect" name="customerCode" onchange="changevalue(this)" id="CodeNumber">
+                                                <option value="" disabled selected>Select One</option>
+                                                <?php foreach ($allCustomers as $data){ ?>
+                                                    <option value="<?php echo $data->id; ?>"><?php echo $data->cus_code; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>নাম ঃ</td>
+                                        <td>
+                                            <select class="form-control inpSelect" name="customerName" id="pharmacyName">
+                                                <option value="" selected disabled>Select One</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ঠিকানা ঃ</td>
+                                        <td>
+                                            <select class="form-control inpSelect" name="customerAddress" id="pharmacyAddress">
+                                                <option value="" selected disabled>Select One</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>প্রতিনিধির নাম ঃ</td>
+                                        <td>
+                                            <select class="form-control inpSelect" name="stuffid" id="salesMan">
+                                                <option value="" selected disabled>Select One</option>
+                                                <?php foreach ($allEmployees as $data){ ?>
+                                                    <option value="<?php echo $data->person_id; ?>"><?php echo $data->first_name; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
+                        <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>                                
+                                        <td style="width: 12%">মোট টাকা ঃ</td>
+                                        <td style="width: 30%">
+                                            <input type="text" class="form-control" name="totaltk" id="totaltk">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>কমিশন ঃ</td>
+                                        <td><input type="text" class="form-control" name="discount" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 12%">প্রদান ঃ </td>
+                                        <td style="width: 30%">
+                                            <input type="text" class="form-control" name="paid" id="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>পাত্তনা ঃ</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="due" id="">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-body" style="position:relative">
+                        <button type="submit" class="btn btn-info btn-sm save-btn">Save</i></button>
+                        <!-- <button class="btn btn-info btn-sm print-btn">Print & Save</i></button> -->
+                        <span class="btn btn-info btn-sm append_row" onclick="appendNewRow(this)"><i class="fa fa-plus-circle"></i></span>
                         <table class="table table-bordered">
-                            <tbody>
-                                <tr>                                
-                                    <td style="width: 12%">মোট টাকা ঃ</td>
-                                    <td style="width: 30%">
-                                        <input type="text" class="form-control" name="" id="">
-                                    </td>
-                                </tr>
+                            <tbody id="invBody">
                                 <tr>
-                                    <td>কমিশন ঃ</td>
-                                    <td><input type="text" class="form-control" name="" id=""></td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 12%"> নগদ প্রদান ঃ </td>
-                                    <td style="width: 30%">
-                                        <input type="text" class="form-control" name="" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>পাত্তনা ঃ</td>
-                                    <td>
-                                        <input type="text" class="form-control" name="" id="">
-                                    </td>
+                                    <th style="width: 12%;background-color: gray;color:#FFF">কোড নং</th>
+                                    <th style="width: 20%;background-color: gray;color:#FFF">ঔষধের নাম</th>
+                                    <th style="width: 10%;background-color: gray;color:#FFF">পরিবেশনা </th>
+                                    <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
+                                    <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
+                                    <th style="width: 20%;background-color: gray;color:#FFF">টাকা</th>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                    </div>
                 </div>
-                <div class="box-body" style="position:relative">
-                    <button class="btn btn-info btn-sm save-btn">Save</i></button>
-                    <button class="btn btn-info btn-sm print-btn">Print & Save</i></button>
-                    <button class="btn btn-info btn-sm append_row" onclick="appendNewRow(this)"><i class="fa fa-plus-circle"></i></button>
-                    <table class="table table-bordered">
-                        <tbody id="invBody">
-                            <tr>
-                                <th style="width: 12%;background-color: gray;color:#FFF">কোড নং</th>
-                                <th style="width: 20%;background-color: gray;color:#FFF">ঔষধের নাম</th>
-                                <th style="width: 10%;background-color: gray;color:#FFF">পরিবেশনা </th>
-                                <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
-                                <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
-                                <th style="width: 20%;background-color: gray;color:#FFF">টাকা</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer clearfix">
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
+            </div><!-- /.container-fluid -->
+        </form>
     </section>
 </div>
 <!-- /.content-wrapper -->
@@ -251,15 +254,15 @@ function appendNewRow(elm) {
     var _uniqueRow_id = $('#invBody tr').length;
     var html = '<tr class="eachRow">'+
                 '    <td class="code_no">'+
-                '       <select class="form-control inpSelect code_select" id="code_no_'+_uniqueRow_id+'" style="width:100%;" onchange="getProductDetailsByCode(this)">'+
+                '       <select class="form-control inpSelect code_select" id="code_no_'+_uniqueRow_id+'" name="productcode[]" style="width:100%;" onchange="getProductDetailsByCode(this)">'+
                 '           <option value="" selected disabled>Select One</option>'+
                 '       </select>'+
                 '    </td>'+
                 '    <td class="pro_name">'+
                 '    </td>'+
                 '    <td class="amount"></td>'+
-                '    <td class="qty"><input type="text" onkeyup="multiplyQty(event)" class="form-control pro_qty" disabled></td>'+
-                '    <td class="sale_price"></td>'+
+                '    <td class="qty"><input type="text" onkeyup="multiplyQty(event)" name="qty[]" class="form-control pro_qty" disabled></td>'+
+                '    <td class="sale_price"></td><input type="hidden" class="sale_priceinput" name="salePrice[]">'+
                 '    <td class="total_price"></td>'+
                '</tr>';
         $('#invBody').append(html);
@@ -293,7 +296,15 @@ function getProductDetailsByCode(elm) {
                 $(_prnt).find('.pro_name').text(v.pro_name);
                 $(_prnt).find('.amount').text(v.amount);
                 $(_prnt).find('.sale_price').text(v.sale_price).attr('tk',bn2en(v.sale_price));
+                $(_prnt).find('.sale_priceinput').val(bn2en(v.sale_price));
             });
+            var totalAmount = 0;
+            $.each($('.sale_price'), function (k,v) {
+                totalAmount = parseInt(totalAmount)+ parseInt($(v).attr('tk'));
+            });
+
+            $("#totaltk").val(converEn2Bn(totalAmount));
+
         }           
        }
     });
@@ -345,7 +356,7 @@ function converEn2Bn(amount) {
     var amount_np = amount.toString().replace(/[0123456789]/g, function(s) {
         return banglaDigits[s];
     });
-        return amount_np;
+    return amount_np;
 }
 
 </script>

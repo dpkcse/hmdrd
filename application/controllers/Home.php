@@ -7,10 +7,6 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper(array('form', 'url', 'text'));
-		// $akt_user_id = $this->session->userdata('id');
-		// if ($akt_user_id == NULL ) {
-		// 	redirect('login');
-		// }
 		$this->load->model('admin_model');
 	}
 
@@ -19,6 +15,110 @@ class Home extends CI_Controller {
 		$data = array();
 		$data['title'] = "Dashboard";
 		$this->load->view('dashboard',$data);
+	}
+
+	/*
+		This method use for save invoice data into sales table and sales item table;
+	*/ 
+
+	public function save_sales(){
+		/* Load form helper */ 
+		$this->load->helper(array('form'));
+                                    
+		/* Load form validation library */ 
+		$this->load->library('form_validation');
+
+		/* Set validation rule for name field in the form */ 
+		$this->form_validation->set_rules('invoiceid', 'Name', 'required');
+		$this->form_validation->set_rules('salesDate', 'Date', 'required');
+		$this->form_validation->set_rules('customerCode', 'Customer Code', 'required');
+		$this->form_validation->set_rules('customerName', 'Customer Name', 'required');
+		$this->form_validation->set_rules('stuffid', 'Stuff Name', 'required');
+		$this->form_validation->set_rules('totaltk', 'Total Amount', 'required');
+		$this->form_validation->set_rules('paid', 'Paid Amount', 'required');
+
+		if ($this->form_validation->run() == FALSE) { 
+			// $this->session->set_flashdata('success', 'Required feild(s) data missing');
+			redirect(base_url() . 'newInvoice', 'refresh');
+		}else {
+			$inputInsertData= array(
+				'sale_time' => $this->input->post('salesDate'),
+				'customer_id' => $this->input->post('customerCode'),
+				'employee_id' => $this->input->post('stuffid'),
+				'invoice_number ' => $this->input->post('invoiceid'),
+				'sales_paid ' => $this->input->post('paid'),
+			);
+			$insertedid = $this->admin_model->insertData('hmdrd_sales',$inputInsertData);
+
+			if($this->input->post('productcode') != ''){
+
+				$products = $this->input->post('productcode');
+				$qty = $this->input->post('qty');
+				$salePrice = $this->input->post('salePrice');
+
+				$salesitem = array();
+				foreach ($products as $key => $value) {
+					$salesitem[] = array(
+						'sale_id'=>$insertedid,//this is current insert id
+						'item_id'=>$value,//this is product id
+						'serialnumber'=>$key,
+						'quantity_purchased'=>$qty[$key],
+						'item_cost_price'=>'0.000',
+						'item_unit_price'=>$salePrice[$key]
+					 );
+				}
+			}
+
+			$this->admin_model->insertbatchinto('hmdrd_sales_items',$salesitem);
+			redirect(base_url() . 'public/invoice-list', 'refresh');
+		}	
+	}
+
+	public function invoiceVoiceList(){
+		$this->data['title'] = 'Sales';
+        $this->data['invoices'] = $this->db->get('hmdrd_sales')->result_array();
+        $this->load->view('invoiceVoiceList', $this->data);
+	}
+
+	public function invoiceprint($sale_id){
+		
+		$this->data['invoicedata'] =  $this->db->get_where('hmdrd_sales' , array('sale_id' => $sale_id) )->result_array();
+		$this->data['invoiceitemdata'] = $this->db->get_where('hmdrd_sales_items' , array('sale_id' => $sale_id) )->result_array();
+
+		// var_dump($this->data['invoiceitemdata']);
+		
+
+        // //this the the PDF filename that user will get to download
+		// $pdfFilePath = $this->data['invoicedata'][0]['invoice_number'].".pdf";
+		
+		// //load mPDF library
+		// $mpdf = $this->load->library('m_pdf');
+		
+
+		//load mPDF library
+		// $this->load->library('m_pdf'); 
+		//now pass the data//
+		$html = $this->load->view('v_invoice_design', $this->data);
+		// $pdfFilePath ="invoice-".time().".pdf"; 
+		// //actually, you can pass mPDF parameter on this load() function
+		// $pdf = $this->m_pdf->load();
+		// $pdf->allow_charset_conversion = true;
+		// $pdf->charset_in = '';
+		// //generate the PDF!
+		// $stylesheet = '<style>'.file_get_contents('Assets/css/custom.css').'</style>';
+		// // apply external css
+		// $pdf->WriteHTML($stylesheet,1);
+		// $pdf->WriteHTML(utf8_encode($html),2);
+		// //offer it to user via browser download! (The PDF won't be saved on your server HDD)
+		// $pdf->Output($pdfFilePath, "D");
+		// exit;
+
+    //    //generate the PDF from the given html
+	// 	$this->m_pdf->pdf->WriteHTML($html);
+
+    //     //download it.
+	// 	$this->m_pdf->pdf->Output($pdfFilePath, "D");
+	// 	// $this->m_pdf->pdf->Output('', "I");
 	}
 
 	/* new customer function section */

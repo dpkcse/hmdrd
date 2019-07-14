@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>আজাদ এন্টারপ্রাইজ (হামদর্দ ল্যাবরেটরিজ বাংলাদেশ)</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -13,6 +14,7 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/dist/css/adminlte.min.css">
+  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/css/custom.css"> -->
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->

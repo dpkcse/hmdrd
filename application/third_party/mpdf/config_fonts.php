@@ -260,6 +260,12 @@ $this->fontdata = array(
 		'useOTL' => 0xFF,
 		),
 
+/* Bangla Nikosh */
+
+	"nikosh" => array(
+		'R' => "Nikosh.ttf",
+		'useOTL' => 0xFF,		
+		),
 
 
 /* Arabic fonts */

@@ -1,0 +1,78 @@
+.form-group {
+    margin-top: 1rem;
+}
+
+.center-block {
+    float:none;
+}
+
+.form-group {
+    margin-top: 1rem;
+}
+.content-header{
+    padding: 5px .5rem;
+}
+.center-block {
+    float:none;
+}
+.invoice_header{
+    width: 100%;
+    display: block;
+    padding: 20px;
+}
+.main_title{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: red;
+    background-image: url(<?php echo base_url(); ?>Assets/dist/img/logo.png);
+    background-repeat: no-repeat;   
+    background-size: 65px;
+    background-position-x: calc(50% - 310px);
+}
+.small_title{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 5px;
+}
+.mid_tittle{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 5px;
+}
+.append_row{
+    position: absolute;
+    right: 2px;
+    top: -36px;
+    cursor: pointer;
+    color: #FFF;
+}
+.append_row .fa{
+    font-size: 16px;
+    color: #FFF;
+}
+.save-btn{
+    position: absolute;
+    right: 143px;
+    top: -36px;
+}
+.print-btn{
+    position: absolute;
+    top: -36px;
+    right: 40px;
+}
+.select2{
+    width:100% !important;
+}
+.select2-container .select2-selection--single{
+    height: 38px !important;
+}
+.invoiceDesin .table tr td, .invoiceDesin .table tr th {
+    line-height: 20px;
+    padding: 5px 15px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem - 2px);
+}

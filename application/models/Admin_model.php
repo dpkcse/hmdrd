@@ -34,8 +34,8 @@ class Admin_model extends CI_Model {
     }
     public function getAllEmployees()
     {
-        $this->db->select('username');
-		$this->db->from('hmdrd_employees');
+        $this->db->select('*');
+		$this->db->from('hmdrd_people');
 		$query = $this->db->get()->result();
 		return $query;
     }
@@ -43,7 +43,7 @@ class Admin_model extends CI_Model {
 	function getCustomerBy_code($postData){
 		$response = array();
 		$this->db->select('*');
-		$this->db->where('cus_code', $postData['cus_code']);
+		$this->db->where('id', $postData['cus_code']);
 		$q = $this->db->get('customers');
 		$response = $q->result_array();
 
@@ -67,5 +67,34 @@ class Admin_model extends CI_Model {
 		$response = $q->result_array();
 
 		return $response;
+	}
+
+	function get_type_name_by_id($type,$type_id='',$field='')
+    {
+        return  $this->db->get_where($type,array('id'=>$type_id))->row()->$field;    
+	}
+
+	function get_people_name_by_id($type,$type_id='',$field='')
+    {
+        return  $this->db->get_where($type,array('person_id'=>$type_id))->row()->$field;    
+	}
+	
+	function insertData($table = FALSE, $data = FALSE){
+        $this->db->insert($table, $data);
+        if($this->db->affected_rows() > 0){
+           $insertID = $this->db->insert_id();
+            return $insertID; 
+        }else
+            return false;
+	}
+	
+	function insertbatchinto($table, $data){
+		$this->db->insert_batch($table, $data);
+		if($this->db->affected_rows() > 0){
+			return TRUE;
+		}
+		else{
+			return false;
+		}
 	}
 }

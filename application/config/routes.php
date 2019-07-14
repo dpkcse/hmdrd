@@ -78,6 +78,8 @@ $route['public/signin'] = "home/login";
 
 $route['public/invoice'] = "home/newInvoice";
 $route['public/invoice-d'] = "home/InvoiceDesign";
+$route['public/invoice-list'] = "home/invoiceVoiceList";
+$route['public/Action/print/invoice/(:any)'] = "home/invoiceprint/$1";
 // f8e22f6cbc5023ba323552565312fbac6ac85497
 
 			
