@@ -2,7 +2,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-info elevation-4">
     <!-- Brand Logo -->
-    <a href="/hmdrd" class="brand-link navbar-info">
+    <a href="/hmdrd" class="brand-link">
       <img src="<?php echo base_url(); ?>Assets/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width:50px;">
       <span class="brand-text font-weight-light">আজাদ এন্টারপ্রাইজ</span>
     </a>

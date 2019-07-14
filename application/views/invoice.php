@@ -97,29 +97,25 @@ select.form-control:not([size]):not([multiple]) {
                     <div class="invoice_header">
                         <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
                         <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
-                        <!-- <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p> -->
                         <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
-                        <!-- <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p> -->
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="row">
-                    <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
+                    <div class="box-body col-md-8 col-lg-8" style="margin:35px 0">
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>                                
                                     <td style="width: 12%">ইনভয়েস নং ঃ</td>
-                                    <td style="width: 30%">
+                                    <td style="width: 38%">
                                         <input type="text" class="form-control" name="" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo '#invoice_'.$uniqidD ?>">
                                     </td>
-                                </tr>
-                                <tr>
                                     <td>তারিখ ঃ</td>
                                     <td><input class="form-control" type="date" name="" id="dateId"></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 12%"> কোড নং ঃ </td>
-                                    <td style="width: 30%">
+                                    <td style="width: 38%">
                                         <select class="form-control inpSelect" name="" onchange="changevalue(this)" id="CodeNumber">
                                             <option value="" disabled selected>Select One</option>
                                             <?php foreach ($allCustomers as $data){ ?>
@@ -127,8 +123,7 @@ select.form-control:not([size]):not([multiple]) {
                                             <?php } ?>
                                         </select>
                                     </td>
-                                </tr>
-                                <tr>
+
                                     <td>নাম ঃ</td>
                                     <td>
                                         <select class="form-control inpSelect" name="" id="pharmacyName">
@@ -143,8 +138,7 @@ select.form-control:not([size]):not([multiple]) {
                                             <option value="" selected disabled>Select One</option>
                                         </select>
                                     </td>
-                                </tr>
-                                <tr>
+
                                     <td>প্রতিনিধির নাম ঃ</td>
                                     <td>
                                         <select class="form-control inpSelect" id="salesMan">
@@ -159,7 +153,7 @@ select.form-control:not([size]):not([multiple]) {
                         </table>
                     </div>
 
-                    <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
+                    <div class="box-body col-md-4 col-lg-4" style="margin:35px 0">
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>                                
