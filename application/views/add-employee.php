@@ -48,13 +48,13 @@
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রথম নামঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="first_name" class="form-control" id="" placeholder="প্রতিনিধির নাম এইখানে লিখুন">
+                                        <input type="text" name="first_name" class="form-control" id="" placeholder="প্রতিনিধির প্রথম নাম এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">শেষ নামঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="last_name" class="form-control" id="" placeholder="প্রতিনিধির নাম এইখানে লিখুন">
+                                        <input type="text" name="last_name" class="form-control" id="" placeholder="প্রতিনিধির শেষ নাম এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -73,18 +73,23 @@
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">লিঙ্গ ঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="gender" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <select name="gender" class="form-control" id="">
+                                            <option value="" disabled selected></option>
+                                            <option value="পুরুষ">পুরুষ</option>
+                                            <option value="স্ত্রী">স্ত্রী</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ফোন নাম্বারঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="phone_number" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <input type="text" name="phone_number" class="form-control" id="" placeholder="ফোন নাম্বার এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label"> ইমেইলঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="email" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <input type="text" name="email" class="form-control" id="" placeholder="ইমেইল এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -102,7 +107,7 @@
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">শহরঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="city" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <input type="text" name="city" class="form-control" id="" placeholder="শহরের নাম এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <!-- <div class="form-group">
@@ -120,7 +125,10 @@
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">দেশঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="country" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <select name="country" class="form-control" id="">
+                                            <option value="" disabled selected>সিলেক্ট করুন</option>
+                                            <option value="বাংলাদেশ">বাংলাদেশ</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -169,6 +177,7 @@
         },
         email: {
             required: true,
+            email: true
         },
         address_1: {
             required: true,

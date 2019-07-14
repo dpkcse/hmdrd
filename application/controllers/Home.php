@@ -26,15 +26,19 @@ class Home extends CI_Controller {
 	public function save_employee(){
 
 		$data=array();
-		$data['person_name']	= $this->input->post('person_name',true);
-		$data['username']		= $this->input->post('username',true);
-		$data['password']		= $this->input->post('password',true);
-		$data['language']		= $this->input->post('language',true);
-		$data['language_code']	= $this->input->post('language_code',true);
-		$data['person_phone']	= $this->input->post('person_phone',true);
-		$data['person_addr']	= $this->input->post('person_addr',true);
+		$data['first_name']		= $this->input->post('first_name',true);
+		$data['last_name']		= $this->input->post('last_name',true);
+		$data['gender']			= $this->input->post('gender',true);
+		$data['phone_number']	= $this->input->post('phone_number',true);
+		$data['email']			= $this->input->post('email',true);
+		$data['address_1']		= $this->input->post('address_1',true);
+		$data['address_2']		= $this->input->post('address_2',true);
+		$data['city']			= $this->input->post('city',true);
+		$data['country']		= $this->input->post('country',true);
+		$fdata['username']		= $this->input->post('username',true);
+		$fdata['password']		= md5($this->input->post('password',true));
 
-		$this->admin_model->save_employee($data);
+		$this->admin_model->save_employee($data,$fdata);
 		redirect('public/n-s-person');
 	}
 
@@ -131,7 +135,6 @@ class Home extends CI_Controller {
 		$data['allCustomers'] = $this->admin_model->getAllCustomers();
 		$data['allproducts'] = $this->admin_model->getAllProducts();
 		$data['allEmployees'] = $this->admin_model->getAllEmployees();
-		// json_encode($data['allproducts'], JSON_UNESCAPED_UNICODE); 
 		$this->load->view('invoice', $data);
 	}
 
@@ -140,11 +143,7 @@ class Home extends CI_Controller {
 		$data = $this->admin_model->getCustomerBy_code($postData);
 		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
 	}
-	// public function getProductDetails(){ 
-	// 	$postData = $this->input->post();
-	// 	$data = $this->admin_model->getProductDetails($postData);
-	// 	echo json_encode($data, JSON_UNESCAPED_UNICODE); 
-	// }
+
 	public function getProductDetailsByCode(){ 
 		$postData = $this->input->post();
 		$data = $this->admin_model->getProductDetailsByCode($postData);
