@@ -3,9 +3,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 
-	public function save_employee($data)
+	public function save_employee($data,$fdata)
 	{
-		$this->db->insert('hmdrd_employees',$data);
+		$this->db->insert('hmdrd_people',$data);
+		 $fdata['person_id'] = $this->db->insert_id();
+		$this->db->insert('hmdrd_employees',$fdata); 
 	}
 
 	public function save_custmers($data)

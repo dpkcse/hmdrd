@@ -46,9 +46,15 @@
                         <form class="form-horizontal" id="stuff_form" action="<?php echo base_url();?>public/add_stuff"  method="post">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিনিধির নামঃ </label>
+                                    <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রথম নামঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="person_name" class="form-control" id="" placeholder="প্রতিনিধির নাম এইখানে লিখুন">
+                                        <input type="text" name="first_name" class="form-control" id="" placeholder="প্রতিনিধির প্রথম নাম এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-lg-12 col-md-12 col-sm-12 control-label">শেষ নামঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="last_name" class="form-control" id="" placeholder="প্রতিনিধির শেষ নাম এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -64,27 +70,65 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ভাষাঃ  </label>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">লিঙ্গ ঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="language" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <input type="text" name="gender" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <select name="gender" class="form-control" id="">
+                                            <option value="" disabled selected></option>
+                                            <option value="পুরুষ">পুরুষ</option>
+                                            <option value="স্ত্রী">স্ত্রী</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ফোন নাম্বারঃ  </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="phone_number" class="form-control" id="" placeholder="ফোন নাম্বার এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label"> ইমেইলঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="email" class="form-control" id="" placeholder="ইমেইল এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">বর্তমান ঠিকানাঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="address_1" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label"> স্থায়ী ঠিকানাঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="address_2" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">শহরঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="city" class="form-control" id="" placeholder="শহরের নাম এইখানে লিখুন">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ভাষা কোডঃ </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" name="state" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">ভাষা কোডঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="language_code" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
+                                        <input type="text" name="zip" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
-                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিনিধির ফোন নাম্বারঃ  </label>
+                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">দেশঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="person_phone" class="form-control" id="" placeholder="প্রতিনিধির ফোন নাম্বার এইখানে লিখুন">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রতিনিধির ঠিকানাঃ </label>
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="person_addr" class="form-control" id="" placeholder="প্রতিনিধির ঠিকানা এইখানে লিখুন">
+                                        <select name="country" class="form-control" id="">
+                                            <option value="" disabled selected>সিলেক্ট করুন</option>
+                                            <option value="বাংলাদেশ">বাংলাদেশ</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +156,10 @@
 <script type="text/javascript">
     $('#stuff_form').validate({
     rules: {
-        person_name: {
+        first_name: {
+            required: true,
+        },
+        last_name: {
             required: true,
         },
         username: {
@@ -121,17 +168,24 @@
         password: {
             required: true,
         },
-        language: {
+        gender: {
             required: true,
         },
-        language_code: {
-            required: true,
-        },
-        person_phone: {
+        phone_number: {
             required: true,
             number: true
         },
-        person_addr: {
+        email: {
+            required: true,
+            email: true
+        },
+        address_1: {
+            required: true,
+        },
+        city: {
+            required: true,
+        },
+        country: {
             required: true,
         },
     }

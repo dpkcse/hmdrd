@@ -92,17 +92,66 @@ select.form-control:not([size]):not([multiple]) {
 <div class="content-wrapper">
     <!-- /.content-header -->
     <section class="content invoiceDesin">
-        <form action="<?php echo base_url('Home/save_sales'); ?>" method="POST">
-            <div class="container-fluid" style="background-color: #FFF">
-                <div class="box">
-                    <div class="box-header with-border" style="display:none">
-                        <div class="invoice_header">
-                            <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
-                            <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
-                            <!-- <p class="mid_tittle">পরিবেশক ঃ মেসার্স আজাদ এন্টারপ্রাইজ </p> -->
-                            <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
-                            <!-- <p class="small_title">মোবাইল ঃ ০১৭৪৯৯৭৭৬০৬ </p> -->
-                        </div>
+        <div class="container-fluid" style="background-color: #FFF">
+            <div class="box">
+                <div class="box-header with-border" style="display:none">
+                    <div class="invoice_header">
+                        <h2 class="main_title">হামদর্দ ল্যাবরেটরিজ (ওয়াক্ফ) বাংলাদেশ</h2>
+                        <p class="small_title">রুপায়ন ট্রেড সেন্টার (১৩-১৪), ১৪৪ কাজী নজরুল ইসলাম এভিনিউ, বাংলামটর, ঢাকা-১০০০, ফোনঃ ০২-৪৮৩১১৩০১-৬</p>
+                        <p class="small_title">কারখানাঃ মেঘনাঘাট, সোনারগাঁ, নারায়ণগঞ্জ ।</p>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="row">
+                    <div class="box-body col-md-8 col-lg-8" style="margin:35px 0">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>                                
+                                    <td style="width: 12%">ইনভয়েস নং ঃ</td>
+                                    <td style="width: 38%">
+                                        <input type="text" class="form-control" name="" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo '#invoice_'.$uniqidD ?>">
+                                    </td>
+                                    <td>তারিখ ঃ</td>
+                                    <td><input class="form-control" type="date" name="" id="dateId"></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 12%"> কোড নং ঃ </td>
+                                    <td style="width: 38%">
+                                        <select class="form-control inpSelect" name="" onchange="changevalue(this)" id="CodeNumber">
+                                            <option value="" disabled selected>Select One</option>
+                                            <?php foreach ($allCustomers as $data){ ?>
+                                                <option value="<?php echo $data->cus_code; ?>"><?php echo $data->cus_code; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
+
+                                    <td>নাম ঃ</td>
+                                    <td>
+                                        <select class="form-control inpSelect" name="" id="pharmacyName">
+                                            <option value="" selected disabled>Select One</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ঠিকানা ঃ</td>
+                                    <td>
+                                        <select class="form-control inpSelect" name="" id="pharmacyAddress">
+                                            <option value="" selected disabled>Select One</option>
+                                        </select>
+                                    </td>
+
+                                    <td>প্রতিনিধির নাম ঃ</td>
+                                    <td>
+                                        <select class="form-control inpSelect" id="salesMan">
+                                            <option value="" selected disabled>Select One</option>
+                                            <?php foreach ($allEmployees as $data){ ?>
+                                                <option value="<?php echo $data->stuff_name; ?>"><?php echo $data->stuff_name; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.box-header -->
                     <div class="row">
@@ -161,6 +210,7 @@ select.form-control:not([size]):not([multiple]) {
                             </table>
                         </div>
 
+<<<<<<< HEAD
                         <div class="box-body col-md-6 col-lg-6" style="margin:35px 0">
                             <table class="table table-bordered">
                                 <tbody>
@@ -194,6 +244,9 @@ select.form-control:not([size]):not([multiple]) {
                         <button type="submit" class="btn btn-info btn-sm save-btn">Save</i></button>
                         <!-- <button class="btn btn-info btn-sm print-btn">Print & Save</i></button> -->
                         <span class="btn btn-info btn-sm append_row" onclick="appendNewRow(this)"><i class="fa fa-plus-circle"></i></span>
+=======
+                    <div class="box-body col-md-4 col-lg-4" style="margin:35px 0">
+>>>>>>> 4690a1e1881124907cf73db78b8083c6e68a133d
                         <table class="table table-bordered">
                             <tbody id="invBody">
                                 <tr>
