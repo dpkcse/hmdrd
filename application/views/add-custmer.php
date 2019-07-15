@@ -57,18 +57,18 @@
                                         <input type="text" name="cus_name" class="form-control" id="" placeholder="প্রতিষ্ঠানের নাম এইখানে লিখুন">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর নামঃ </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="cont_person_name" class="form-control" id="" placeholder="যোগাযোগকারীর নাম এইখানে লিখুন">
                                     </div>
-                                </div>
-                                <div class="form-group">
+                                </div> -->
+                                <!-- <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">যোগাযোগকারীর ফোন নাম্বারঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="cont_person_phone" class="form-control" id="" placeholder="যোগাযোগকারীর ফোন নাম্বার এইখানে লিখুন">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">দোকানের ফোন নাম্বারঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -112,16 +112,8 @@
         cus_name: {
             required: true,
         },
-        cont_person_name: {
-            required: true,
-        },
-        cont_person_phone: {   
-            required: true,
-            number: true
-        },
         cus_mobile: {
             required: true,
-            number: true
         },
         cus_address: {
             required: true,
