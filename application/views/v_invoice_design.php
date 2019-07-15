@@ -146,10 +146,11 @@ select.form-control:not([size]):not([multiple]) {
                                         <tbody class="text-thin tblProductBody">
                                         <?php
                                             $total = 0;
+                                            $coutnt = 1;
                                             foreach ( $invoiceitemdata as $row):
                                         ?>
                                             <tr>
-                                                <td width="40" class="text-center">১</td>
+                                                <td width="40" class="text-center"><?php echo en2bn($coutnt); ?></td>
                                                 <td class="" ><?php echo $this->admin_model->get_type_name_by_id('products',$row['item_id'],'pro_name') ;?></td>
                                                 <td class="text-center"><?php echo $this->admin_model->get_type_name_by_id('products',$row['item_id'],'amount') ;?></td>
                                                 <td class="text-center"><?php echo en2bn($row['quantity_purchased']); ?></td>
@@ -157,6 +158,7 @@ select.form-control:not([size]):not([multiple]) {
                                                 <td class="text-center"><?php echo en2bn(bn2en($row['quantity_purchased'])*bn2en($row['item_unit_price'])); ?></td>
                                             </tr>
                                         <?php
+                                            $coutnt++;
                                             $total = $total + bn2en($row['quantity_purchased'])*bn2en($row['item_unit_price']);
                                             endforeach;
                                         ?>

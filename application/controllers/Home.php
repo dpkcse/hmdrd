@@ -29,49 +29,60 @@ class Home extends CI_Controller {
 		$this->load->library('form_validation');
 
 		/* Set validation rule for name field in the form */ 
-		$this->form_validation->set_rules('invoiceid', 'Name', 'required');
-		$this->form_validation->set_rules('salesDate', 'Date', 'required');
-		$this->form_validation->set_rules('customerCode', 'Customer Code', 'required');
-		$this->form_validation->set_rules('customerName', 'Customer Name', 'required');
-		$this->form_validation->set_rules('stuffid', 'Stuff Name', 'required');
-		$this->form_validation->set_rules('totaltk', 'Total Amount', 'required');
-		$this->form_validation->set_rules('paid', 'Paid Amount', 'required');
+		// $this->form_validation->set_rules('invoiceid', 'Name', 'required');
+		// $this->form_validation->set_rules('salesDate', 'Date', 'required');
+		// $this->form_validation->set_rules('customerCode', 'Customer Code', 'required');
+		// $this->form_validation->set_rules('customerName', 'Customer Name', 'required');
+		// $this->form_validation->set_rules('stuffid', 'Stuff Name', 'required');
+		// $this->form_validation->set_rules('totaltk', 'Total Amount', 'required');
+		// $this->form_validation->set_rules('paid', 'Paid Amount', 'required');
 
-		if ($this->form_validation->run() == FALSE) { 
-			// $this->session->set_flashdata('success', 'Required feild(s) data missing');
-			redirect(base_url() . 'newInvoice', 'refresh');
-		}else {
-			$inputInsertData= array(
-				'sale_time' => $this->input->post('salesDate'),
-				'customer_id' => $this->input->post('customerCode'),
-				'employee_id' => $this->input->post('stuffid'),
-				'invoice_number ' => $this->input->post('invoiceid'),
-				'sales_paid ' => $this->input->post('paid'),
-			);
-			$insertedid = $this->admin_model->insertData('hmdrd_sales',$inputInsertData);
+		// if ($this->form_validation->run() == FALSE) { 
+		// 	echo "Data missing";
+		// 	// $this->session->set_flashdata('success', 'Required feild(s) data missing');
+		// 	// redirect(base_url() . 'public/invoice', 'refresh');
+		// }else {
+			
+		// }	
 
-			if($this->input->post('productcode') != ''){
+		$inputInsertData= array(
+			'sale_time' => $this->input->post('salesDate'),
+			'customer_id' => $this->input->post('customerCode'),
+			'employee_id' => $this->input->post('stuffid'),
+			'invoice_number ' => $this->input->post('invoiceid'),
+			'sales_paid ' => $this->input->post('paid'),
+		);
+		$insertedid = $this->admin_model->insertData('hmdrd_sales',$inputInsertData);
 
-				$products = $this->input->post('productcode');
-				$qty = $this->input->post('qty');
-				$salePrice = $this->input->post('salePrice');
+		if($this->input->post('productcode') != ''){
 
-				$salesitem = array();
-				foreach ($products as $key => $value) {
-					$salesitem[] = array(
-						'sale_id'=>$insertedid,//this is current insert id
-						'item_id'=>$value,//this is product id
-						'serialnumber'=>$key,
-						'quantity_purchased'=>$qty[$key],
-						'item_cost_price'=>'0.000',
-						'item_unit_price'=>$salePrice[$key]
-					 );
-				}
+			$products = $this->input->post('productcode');
+			$qty = $this->input->post('qty');
+			$salePrice = $this->input->post('salePrice');
+
+			$salesitem = array();
+			foreach ($products as $key => $value) {
+				$salesitem[] = array(
+					'sale_id'=>$insertedid,//this is current insert id
+					'item_id'=>$value,//this is product id
+					'serialnumber'=>$key,
+					'quantity_purchased'=>$this->bn2en($qty[$key]),
+					'item_cost_price'=>'0.000',
+					'item_unit_price'=>$salePrice[$key]
+				 );
 			}
 
-			$this->admin_model->insertbatchinto('hmdrd_sales_items',$salesitem);
-			redirect(base_url() . 'public/invoice-list', 'refresh');
-		}	
+			print_r($salesitem);
+		}
+
+		$this->admin_model->insertbatchinto('hmdrd_sales_items',$salesitem);
+		redirect(base_url() . 'public/invoice-list', 'refresh');
+	}
+
+	function bn2en($number) {
+		$bn = array("১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "০");
+		$en = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+		return str_replace($bn, $en, $number);
 	}
 	
 
