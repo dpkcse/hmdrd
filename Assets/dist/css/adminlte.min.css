@@ -9847,8 +9847,8 @@ html {
 
 .sidebar-light-info .nav-sidebar>.nav-item.menu-open>.nav-link,
 .sidebar-light-info .nav-sidebar>.nav-item:hover>.nav-link {
-    color: #212529;
-    background-color: #f4f4f5
+    color: #ffffff;
+    background-color: #17a2b8
 }
 
 .sidebar-light-info .nav-sidebar>.nav-item>.nav-link.active {
