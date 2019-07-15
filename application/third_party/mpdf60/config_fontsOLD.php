@@ -260,12 +260,6 @@ $this->fontdata = array(
 		'useOTL' => 0xFF,
 		),
 
-/* Bangla Nikosh */
-
-	"nikosh" => array(
-		'R' => "Nikosh.ttf",
-		'useOTL' => 0xFF,		
-		),
 
 
 /* Arabic fonts */
@@ -302,6 +296,10 @@ $this->fontdata = array(
 	"unbatang" => array(	/* Korean */
 		'R' => "UnBatang_0613.ttf",
 		),
+
+	"solaimanlipi" => array( 
+		"R" => "SolaimanLipi.ttf",
+	),
 
 
 );

@@ -73,6 +73,7 @@ class Home extends CI_Controller {
 			redirect(base_url() . 'public/invoice-list', 'refresh');
 		}	
 	}
+	
 
 	public function invoiceVoiceList(){
 		$this->data['title'] = 'Sales';
@@ -88,30 +89,27 @@ class Home extends CI_Controller {
 		// var_dump($this->data['invoiceitemdata']);
 		
 
-        // //this the the PDF filename that user will get to download
+        // // //this the the PDF filename that user will get to download
 		// $pdfFilePath = $this->data['invoicedata'][0]['invoice_number'].".pdf";
-		
-		// //load mPDF library
-		// $mpdf = $this->load->library('m_pdf');
-		
 
-		//load mPDF library
+		// //load mPDF library
 		// $this->load->library('m_pdf'); 
 		//now pass the data//
 		$html = $this->load->view('v_invoice_design', $this->data);
-		// $pdfFilePath ="invoice-".time().".pdf"; 
-		// //actually, you can pass mPDF parameter on this load() function
-		// $pdf = $this->m_pdf->load();
-		// $pdf->allow_charset_conversion = true;
-		// $pdf->charset_in = '';
-		// //generate the PDF!
-		// $stylesheet = '<style>'.file_get_contents('Assets/css/custom.css').'</style>';
-		// // apply external css
-		// $pdf->WriteHTML($stylesheet,1);
-		// $pdf->WriteHTML(utf8_encode($html),2);
-		// //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-		// $pdf->Output($pdfFilePath, "D");
-		// exit;
+	// 	$pdfFilePath ="invoice-".time().".pdf"; 
+	// 	//actually, you can pass mPDF parameter on this load() function
+	// 	$pdf = $this->m_pdf->load();
+	// 	$pdf->allow_charset_conversion = true;
+	// 	$pdf->charset_in = 'UTF-8';
+
+	// 	//generate the PDF!
+	// 	$stylesheet = '<style>'.file_get_contents('Assets/css/custom.css').'</style>';
+	// 	// apply external css
+	// 	$pdf->WriteHTML($stylesheet,1);
+	// 	$pdf->WriteHTML(utf8_encode($html),2);
+	// 	//offer it to user via browser download! (The PDF won't be saved on your server HDD)
+	// 	$pdf->Output($pdfFilePath, "D");
+	// 	exit;
 
     //    //generate the PDF from the given html
 	// 	$this->m_pdf->pdf->WriteHTML($html);
