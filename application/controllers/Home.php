@@ -156,8 +156,6 @@ class Home extends CI_Controller {
 		$data=array();
 		$data['cus_code']			= $this->input->post('cus_code',true);
 		$data['cus_name']	        = $this->input->post('cus_name',true);
-		$data['cont_person_name']	= $this->input->post('cont_person_name',true);
-		$data['cont_person_phone']	= $this->input->post('cont_person_phone',true);
 		$data['cus_mobile']			= $this->input->post('cus_mobile',true);
 		$data['cus_address']		= $this->input->post('cus_address',true);
 
@@ -170,9 +168,8 @@ class Home extends CI_Controller {
 	public function newCustomer(){
 		$data = array();
 		$data['title'] = "Customer";
-		$this->load->view('v-new-customer',$data);
+		$this->load->view('add-custmer',$data);
 	}
-
 
 	public function customerList(){
 		$data = array();
@@ -190,10 +187,9 @@ class Home extends CI_Controller {
 
 	public function salesList(){
 		$data = array();
-		$data['title'] = "Employee";
-		$this->load->view('v-new-stuff-list',$data);
+		$data['title'] = "Employee List";
+		$this->load->view('employee-list',$data);
 	}
-
 
 	/****** Product Entry function section ******/
 	
@@ -202,6 +198,12 @@ class Home extends CI_Controller {
 		$data['title'] = "Product";
 		$this->load->view('add-product',$data);
 	}
+
+	public function productList(){
+		$data = array();
+		$data['title'] = "Product List";
+		$this->load->view('product-list',$data);
+	}	
 
 	public function save_products(){
 		
@@ -219,20 +221,6 @@ class Home extends CI_Controller {
 
 		redirect('public/n-product');
 	}
-	
-	public function productList(){
-		$data = array();
-		$data['title'] = "Product List";
-		$this->load->view('v-new-product-list',$data);
-	}	
-	
-	
-	/****** Login System function section ******/
-
-	public function login(){
-		$this->load->view('v-login');
-	}
-
 
 	/****** Invoice function section ******/
 
@@ -257,5 +245,13 @@ class Home extends CI_Controller {
 		echo json_encode($data, JSON_UNESCAPED_UNICODE); 
 	}
 	/****** Invoice function section end ******/
+
+		
+	/****** Login System function section ******/
+
+	public function login(){
+		$this->load->view('v-login');
+	}
+
 
 }

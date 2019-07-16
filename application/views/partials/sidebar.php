@@ -50,40 +50,40 @@
                 </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview <?php if($title == 'Employee' || $title == 'Employee List'){?>menu-open<?php }?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p> প্রতিনিধি <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>public/n-s-person" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-person" class="nav-link  <?php if($title == 'Employee'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন প্রতিনিধি</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>public/n-s-l" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-l" class="nav-link  <?php if($title == 'Employee List'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রতিনিধি লিষ্ট</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview <?php if($title == 'Product' || $title == 'Product List'){?>menu-open<?php }?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p> প্রোডাক্ট <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>public/n-product" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-product" class="nav-link <?php if($title == 'Product'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন প্রোডাক্ট মজুদ</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>public/n-s-product-l" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/n-s-product-l" class="nav-link <?php if($title == 'Product List'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>প্রোডাক্ট লিষ্ট</p>
                 </a>
@@ -110,20 +110,20 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview <?php if($title == 'Invoice' || $title == 'Sales'){?>menu-open<?php }?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p> ইনভয়েস <i class="fa fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>public/invoice" class="nav-link">
+                <a href="<?php echo base_url(); ?>public/invoice" class="nav-link <?php if($title == 'Invoice'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>নতুন ইনভয়েস তৈরী</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>/public/invoice-list" class="nav-link">
+                <a href="<?php echo base_url(); ?>/public/invoice-list" class="nav-link <?php if($title == 'Sales'){?>active<?php }?>">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>ইনভয়েস লিষ্ট</p>
                 </a>

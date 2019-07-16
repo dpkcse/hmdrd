@@ -74,8 +74,8 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <select name="gender" class="form-control" id="">
                                             <option value="" disabled selected></option>
-                                            <option value="পুরুষ">পুরুষ</option>
-                                            <option value="স্ত্রী">স্ত্রী</option>
+                                            <option value="1">পুরুষ</option>
+                                            <option value="0">স্ত্রী</option>
                                         </select>
                                     </div>
                                 </div>
