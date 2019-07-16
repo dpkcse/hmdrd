@@ -83,7 +83,7 @@
                                 <div class="form-group">
                                     <label for="" class="col-lg-12 col-md-12 col-sm-12 control-label">প্রোডাক্টের ক্রয়মূল্যঃ  </label>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <input type="number" name="buy_price" class="form-control" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
+                                        <input type="text" name="buy_price" class="form-control" placeholder="প্রোডাক্টের ক্রয়মূল্য এইখানে লিখুন">
                                     </div>
                                 </div>
                                 <div class="form-group">
