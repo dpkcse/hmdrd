@@ -151,6 +151,11 @@ class Home extends CI_Controller {
 		redirect('public/n-s-person');
 	}
 
+	public function deleteEmployee($id){
+		$this->admin_model->deleteEmployee($id);
+		redirect('public/n-s-l');
+	}
+
 	public function save_custmers(){
 
 		$data=array();
@@ -174,7 +179,11 @@ class Home extends CI_Controller {
 	public function customerList(){
 		$data = array();
 		$data['title'] = "Customer List";
-		$this->load->view('v-new-customer-list',$data);
+		$this->load->view('customer-list',$data);
+	}
+	public function deleteCustomer($id){
+		$this->admin_model->deleteCustomer($id);
+		redirect('public/customer-l');
 	}
 
 	/******  Sales person function section ******/
@@ -220,6 +229,11 @@ class Home extends CI_Controller {
 		$this->admin_model->save_products($data);
 
 		redirect('public/n-product');
+	}
+
+	public function deleteProduct($id){
+		$this->admin_model->deleteProduct($id);
+		redirect('public/n-s-product-l');
 	}
 
 	/****** Invoice function section ******/

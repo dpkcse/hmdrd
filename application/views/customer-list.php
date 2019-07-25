@@ -65,7 +65,7 @@ function en2bn($number) {
                                     <th>ফার্মেসী নাম</th>
                                     <th>ঠিকানা</th>
                                     <th>মোবাইল নং</th>
-                                    <th>#</th>
+                                    <th>অ্যাকশন</th>
                                 </tr>
                             </thead>
                             <?php $customers   = $this->db->get('customers')->result_array(); ?>
@@ -77,7 +77,7 @@ function en2bn($number) {
                                     <td><?php echo $row2['cus_name']; ?></td>
                                     <td><?php echo $row2['cus_address']; ?></td>
                                     <td> <?php echo $row2['cus_mobile']; ?></td>
-                                    <td>X</td>
+                                    <td><a href="<?php echo base_url('public/del-c/'.$row2['id']);?>" class="btn btn-outline-info btn-sm">Edit</a> <a href="<?php echo base_url('public/del-c/'.$row2['id']);?>" class="btn btn-outline-danger btn-sm">Delete</a></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

@@ -10,14 +10,38 @@ class Admin_model extends CI_Model {
 		$this->db->insert('hmdrd_employees',$fdata); 
 	}
 
+	public function deleteEmployee($id)
+	{
+		$this->db->where('person_id', $id);
+		$this->db->delete('hmdrd_people');
+		if ($this->db->affected_rows() > 0) {
+			$this->db->where('person_id', $id);
+			$this->db->delete('hmdrd_employees');
+		} else {
+			return false;
+		}
+	}
+
 	public function save_custmers($data)
 	{
 		$this->db->insert('customers',$data);
 	}
 
+	public function deleteCustomer($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('customers');
+	}
+
 	public function save_products($data)
 	{
 		$this->db->insert('products',$data);
+	}
+
+	public function deleteProduct($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('products');
 	}
 
     public function getAllCustomers()

@@ -51,13 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 			/***  Stuff Route ****/
 $route['public/add_stuff'] = "home/save_employee";
-
-			/***  Stuff Route ****/
-$route['public/add_custmers'] = "home/save_custmers";
+$route['public/del-e/(:any)'] = "home/deleteEmployee/$1";
 
 			/***  customer Route ****/
+$route['public/add_custmers'] = "home/save_custmers";
 $route['public/n-customer'] = "home/newCustomer";
 $route['public/customer-l'] = "home/customerList";
+$route['public/del-c/(:any)'] = "home/deleteCustomer/$1";
 
 			/***  Sales Route ****/
 $route['public/n-s-person'] = "home/newSalesPerson";
@@ -68,6 +68,7 @@ $route['public/n-s-l']	= "home/salesList";
 $route['public/n-product'] = "home/newProductEntry";
 $route['public/n-s-product-l'] = "home/productList";
 $route['public/add_products'] = "home/save_products";
+$route['public/del-p/(:any)'] = "home/deleteProduct/$1";
 
 			/***  Login Route ****/
 $route['public/signin'] = "home/login";

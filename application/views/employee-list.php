@@ -40,7 +40,7 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>#</th>
                                         <th>প্রথম নাম</th>
                                         <th>শেষ নাম</th>
                                         <th>লিঙ্গ</th>
@@ -48,6 +48,7 @@
                                         <th>ইমেইল</th>
                                         <th>বর্তমান ঠিকানা</th>
                                         <th>স্থায়ী ঠিকানা</th>
+                                        <th>অ্যাকশন</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,6 +63,7 @@
                                             <td><?php echo $v['email']; ?></td>
                                             <td><?php echo $v['address_1']; ?></td>
                                             <td><?php echo $v['address_2']; ?></td>
+                                            <td><a href="<?php echo base_url('public/edit-e/'.$v['person_id']);?>" class="btn btn-outline-info btn-sm">Edit</a> <a href="<?php echo base_url('public/del-e/'.$v['person_id']);?>" class="btn btn-outline-danger btn-sm">Delete</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

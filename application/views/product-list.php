@@ -61,13 +61,13 @@ function en2bn($number) {
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>সিরিয়াল নং</th>
+                                        <th>#</th>
                                         <th>কোড নং</th>
                                         <th>প্রোডাক্টের নাম</th>
                                         <th>পরিমান</th>
                                         <th>ক্রয় মূল্য</th>
                                         <th>বিক্রয় মূল্য</th>
-                                        <th>#</th>
+                                        <th>অ্যাকশন</th>
                                     </tr>
                                 </thead>
                                 <?php $customers   = $this->db->get('products')->result_array(); ?>
@@ -80,7 +80,7 @@ function en2bn($number) {
                                         <td><?php echo $row2['amount']; ?></td>
                                         <td> <?php echo $row2['buy_price']; ?></td>
                                         <td> <?php echo $row2['sale_price']; ?></td>
-                                        <td>X</td>
+                                        <td><a href="<?php echo base_url('public/edit-p/'.$row2['id']);?>" class="btn btn-outline-info btn-sm">Edit</button> <a href="<?php echo base_url('public/del-p/'.$row2['id']);?>" class="btn btn-outline-danger btn-sm">Delete</button></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
