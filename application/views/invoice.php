@@ -107,15 +107,7 @@ select.form-control:not([size]):not([multiple]) {
                         <div class="col-md-8 col-lg-8" style="margin:35px 0">
                             <table class="table table-bordered">
                                 <tbody>
-                                    <tr>                                
-                                        <td style="width: 12%">ইনভয়েস নং ঃ</td>
-                                        <td style="width: 38%">
-                                            <input type="text" class="form-control" name="invoiceid" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo 'invoice_'.$uniqidD ?>" required>
-                                        </td>
-                                        <td>তারিখ ঃ</td>
-                                        <td><input class="form-control" type="date" name="salesDate" id="dateId"></td>
-                                    </tr>
-                                    <tr>
+                                    <tr>    
                                         <td style="width: 12%"> কোড নং ঃ </td>
                                         <td style="width: 38%">
                                             <select class="form-control inpSelect" name="customerCode" onchange="changevalue(this)" id="CodeNumber"  required>
@@ -124,14 +116,22 @@ select.form-control:not([size]):not([multiple]) {
                                                     <option value="<?php echo $data->id; ?>"><?php echo $data->cus_code; ?></option>
                                                 <?php } ?>
                                             </select>
+                                        </td>   
+                                        <td style="width: 12%">ইনভয়েস নং ঃ</td>
+                                        <td style="width: 38%">
+                                            <input type="text" class="form-control" name="invoiceid" id="" value="<?php $uniqidD = mt_rand(100000, 999999); echo 'invoice_'.$uniqidD ?>" required>
                                         </td>
-
+                                    </tr>
+                                    <tr>
                                         <td>নাম ঃ</td>
                                         <td>
                                             <select class="form-control inpSelect" name="customerName" id="pharmacyName"  required>
                                                 <option value="" selected disabled>Select One</option>
                                             </select>
                                         </td>
+
+                                        <td>তারিখ ঃ</td>
+                                        <td><input class="form-control" type="date" name="salesDate" id="dateId"></td>
                                     </tr>
                                     <tr>
                                         <td>ঠিকানা ঃ</td>

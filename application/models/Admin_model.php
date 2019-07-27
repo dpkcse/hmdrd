@@ -10,6 +10,15 @@ class Admin_model extends CI_Model {
 		$this->db->insert('hmdrd_employees',$fdata); 
 	}
 
+	public function updateEmployee($data,$fdata)
+	{
+		$this->db->where('person_id', $data['person_id']);
+		$this->db->update('hmdrd_people', $data);
+
+		 $fdata['person_id'] = $data['person_id'];
+		$this->db->update('hmdrd_employees',$fdata); 
+	}
+
 	public function deleteEmployee($id)
 	{
 		$this->db->where('person_id', $id);
@@ -22,9 +31,33 @@ class Admin_model extends CI_Model {
 		}
 	}
 
+	public function editEmployee($id)
+	{
+		$this->db->select('*');
+		$this->db->from('hmdrd_people');
+		$this->db->where('person_id', $id);
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
+		return $result;
+	}
+	public function editEmployeeUser($id)
+	{
+		$this->db->select('*');
+		$this->db->from('hmdrd_employees');
+		$this->db->where('person_id', $id);
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
+		return $result;
+	}
+
 	public function save_custmers($data)
 	{
 		$this->db->insert('customers',$data);
+	}
+	public function updateCustomer($data)
+	{
+		$this->db->where('id', $data['id']);
+		$this->db->update('customers', $data);
 	}
 
 	public function deleteCustomer($id)
@@ -33,15 +66,41 @@ class Admin_model extends CI_Model {
 		$this->db->delete('customers');
 	}
 
+	public function editCustomer($id)
+	{
+		$this->db->select('*');
+		$this->db->from('customers');
+		$this->db->where('id', $id);
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
+		return $result;
+	}
+
 	public function save_products($data)
 	{
 		$this->db->insert('products',$data);
+	}
+
+	public function updateProduct($data)
+	{
+		$this->db->where('id', $data['id']);
+		$this->db->update('products', $data);
 	}
 
 	public function deleteProduct($id)
 	{
 		$this->db->where('id', $id);
 		$this->db->delete('products');
+	}
+
+	public function editProduct($id)
+	{
+		$this->db->select('*');
+		$this->db->from('products');
+		$this->db->where('id', $id);
+		$query_result 	= $this->db->get();
+		$result 		= $query_result->row();
+		return $result;
 	}
 
     public function getAllCustomers()
@@ -76,21 +135,12 @@ class Admin_model extends CI_Model {
 		return $response;
 	}
 
-	// function getProductDetails($postData){
-	// 	$response = array();
-	// 	$this->db->select('*');
-	// 	$this->db->where('pro_name', $postData['pro_name']);
-	// 	$q = $this->db->get('products');
-	// 	$response = $q->result_array();
-
-	// 	return $response;
-	// }
 	function getProductDetailsByCode($postData){
 		$response = array();
 		$this->db->select('*');
 		$this->db->where('code_no', $postData['code_no']);
 		$q = $this->db->get('products');
-		$response = $q->result_array();
+		$response = $q->result();
 
 		return $response;
 	}

@@ -65,7 +65,7 @@
                                             <td><?php echo $v['address_2']; ?></td>
                                             <td><a href="<?php echo base_url('public/edit-e/'.$v['person_id']);?>" class="btn btn-outline-info btn-sm">Edit</a> <a href="<?php echo base_url('public/del-e/'.$v['person_id']);?>" class="btn btn-outline-danger btn-sm">Delete</a></td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php }; ?>
                                 </tbody>
                             </table>
                         </div>

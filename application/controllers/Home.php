@@ -156,6 +156,35 @@ class Home extends CI_Controller {
 		redirect('public/n-s-l');
 	}
 
+	public function editEmployee($id){
+		$data = array();
+		$data['title'] = "Employee";
+		$data['result'] = json_encode($this->admin_model->editEmployee($id), JSON_UNESCAPED_UNICODE);
+		$data['result2'] = json_encode($this->admin_model->editEmployeeUser($id), JSON_UNESCAPED_UNICODE);
+		$this->load->view('edit-employee',$data);
+	}
+
+	public function updateEmployee()
+	{
+
+		$data=array();
+		$data['person_id']		= $this->input->post('person_id',true);
+		$data['first_name']		= $this->input->post('first_name',true);
+		$data['last_name']		= $this->input->post('last_name',true);
+		$data['gender']			= $this->input->post('gender',true);
+		$data['phone_number']	= $this->input->post('phone_number',true);
+		$data['email']			= $this->input->post('email',true);
+		$data['address_1']		= $this->input->post('address_1',true);
+		$data['address_2']		= $this->input->post('address_2',true);
+		$data['city']			= $this->input->post('city',true);
+		$data['country']		= $this->input->post('country',true);
+		$fdata['username']		= $this->input->post('username',true);
+		$fdata['password']		= md5($this->input->post('password',true));
+
+		$this->admin_model->updateEmployee($data,$fdata);
+		redirect('public/n-s-l');
+	}
+
 	public function save_custmers(){
 
 		$data=array();
@@ -166,6 +195,19 @@ class Home extends CI_Controller {
 
 		$this->admin_model->save_custmers($data);
 		redirect('public/n-customer');
+	}
+	
+	public function updateCustomer(){
+
+		$data=array();
+		$data['id']			        = $this->input->post('id',true);
+		$data['cus_code']			= $this->input->post('cus_code',true);
+		$data['cus_name']	        = $this->input->post('cus_name',true);
+		$data['cus_mobile']			= $this->input->post('cus_mobile',true);
+		$data['cus_address']		= $this->input->post('cus_address',true);
+
+		$this->admin_model->updateCustomer($data);
+		redirect('public/customer-l');
 	}
 
 	/* new customer function section */
@@ -184,6 +226,13 @@ class Home extends CI_Controller {
 	public function deleteCustomer($id){
 		$this->admin_model->deleteCustomer($id);
 		redirect('public/customer-l');
+	}
+
+	public function editCustomer($id){
+		$data = array();
+		$data['title'] = "Customer";
+		$data['result'] = json_encode($this->admin_model->editCustomer($id), JSON_UNESCAPED_UNICODE);
+		$this->load->view('edit-customer',$data);
 	}
 
 	/******  Sales person function section ******/
@@ -233,6 +282,30 @@ class Home extends CI_Controller {
 
 	public function deleteProduct($id){
 		$this->admin_model->deleteProduct($id);
+		redirect('public/n-s-product-l');
+	}
+
+	public function editProduct($id){
+		$data = array();
+		$data['title'] = "Product";
+		$data['result'] = json_encode($this->admin_model->editProduct($id), JSON_UNESCAPED_UNICODE);
+		$this->load->view('edit-product',$data);
+	}
+
+	public function updateProduct(){
+		$data=array();
+		$data['id']				= $this->input->post('id',true);
+		$data['code_no']		= $this->input->post('code_no',true);
+		$data['pro_name']	    = $this->input->post('pro_name',true);
+		$data['pro_details']	= $this->input->post('pro_details',true);
+		$data['pro_type']	    = $this->input->post('pro_type',true);
+		$data['amount']			= $this->input->post('amount',true);
+		$data['buy_price']		= $this->input->post('buy_price',true);
+		$data['sale_price']		= $this->input->post('sale_price',true);
+		$data['pro_mrp']		= $this->input->post('pro_mrp',true);
+
+		$this->admin_model->updateProduct($data);
+
 		redirect('public/n-s-product-l');
 	}
 
