@@ -103,7 +103,7 @@
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer text-center">
-                                <input type="reset" class="btn btn-defaul" value="বাতিল" style="margin-right: 1%;">
+                                <a href="<?php echo base_url('public/n-s-product-l'); ?>" class="btn btn-defaul" style="margin-right: 1%;">বাতিল</a>
                                 <button type="submit" class="btn btn-info">আপডেট করুন</button>
                             </div>
                         <!-- /.box-footer -->
