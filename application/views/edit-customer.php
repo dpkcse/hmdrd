@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">কাষ্টমার এন্ট্রি ফর্ম</h1>
+                <h1 class="m-0 text-dark">এডিট কাষ্টমার</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <!-- <ol class="breadcrumb float-sm-right">
@@ -74,7 +74,7 @@
                             <!-- /.box-body -->
                             <div class="box-footer text-center">
                                 <input type="reset" class="btn btn-defaul" value="বাতিল" style="margin-right: 1%;">
-                                <button type="submit" class="btn btn-info">সেইভ করুন</button>
+                                <button type="submit" class="btn btn-info">আপডেট করুন</button>
                             </div>
                         <!-- /.box-footer -->
                         </form>

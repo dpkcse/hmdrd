@@ -54,7 +54,7 @@ function en2bn($number) {
 }
 .append_row{
     position: absolute;
-    right: 2px;
+    right: 10px;
     top: -36px;
     cursor: pointer;
     color: #FFF;
@@ -197,6 +197,7 @@ select.form-control:not([size]):not([multiple]) {
                                         <th style="width: 12%;background-color: gray;color:#FFF">পরিমান</th>
                                         <th style="width: 10%;background-color: gray;color:#FFF">পন্যের দাম </th>
                                         <th style="width: 20%;background-color: gray;color:#FFF">টাকা</th>
+                                        <th style="width: 7%;background-color: gray;color:#FFF">ডিলিট</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -256,6 +257,7 @@ function appendNewRow(elm) {
                 '    <td class="qty"><input type="text" onkeyup="multiplyQty(event)" onkeydown="preventDeafult(event)" name="qty[]" class="form-control pro_qty"></td>'+
                 '    <td class="sale_price"></td><input type="hidden" class="sale_priceinput" name="salePrice[]">'+
                 '    <td class="total_price"></td>'+
+                '    <td class="delete"><button class="btn btn-info btn-sm" onclick="deleteRow(this)">ডিলিট</i></button></td>'+
                '</tr>';
         $('#invBody').append(html);
 
@@ -344,6 +346,10 @@ function multiplyQty(e) {
             // appendNewRow();
         }
     }
+}
+
+function deleteRow(elm) {
+    $(elm).parents('.eachRow').remove();
 }
 
 
