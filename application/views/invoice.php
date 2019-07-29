@@ -350,8 +350,11 @@ function multiplyQty(e) {
 
 function deleteRow(elm) {
     $(elm).parents('.eachRow').remove();
+    var totaltk = converBn2En($("#totaltk").val());
+    var deletable = converBn2En($(elm).parents('.eachRow').find('.total_price').text());
+    var netVal = parseInt(totaltk) - parseInt(deletable);
+    $("#totaltk").val(converEn2Bn(netVal));
 }
-
 
 function converBn2En(amount) {
     var englishDigits = {'০': '0', '১': '1', '২': '2', '৩': '3', '৪': '4', '৫': '5', '৬': '6', '৭': '7', '৮': '8', '৯': '9' };
